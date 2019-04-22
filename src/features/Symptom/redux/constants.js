@@ -1,0 +1,2 @@
+export const ALL_DETAILSYMPTOM = 'ALL_DETAILSYMPTOM';
+
