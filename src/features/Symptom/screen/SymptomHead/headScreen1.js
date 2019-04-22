@@ -5,7 +5,7 @@ import HandleBack from "../../../common/components/HandleBack";
 import HeaderTitle from '../../../common/components/HeaderTitle';
 import CommonText from '../../../common/components/CommonText';
 import SideMenu from '../../../common/components/SideMenu';
-import {BOBY_SCREEN2, SYMPTOM_SCREEN} from "../../router";
+import {HEAD_SCREEN2, SYMPTOM_SCREEN} from "../../router";
 import {HERB_SCREEN} from "../../../Herb/router";
 import {HOME_SCREEN, LISTHERB_SCREEN} from "../../../HomeMain/router";
 import { connect } from "react-redux";
@@ -13,7 +13,7 @@ import { bindActionCreators } from "redux";
 import { NavigationActions } from "react-navigation";
 import {AllDetailSymptom} from "../../redux/actions";
 
-class bodyScreen1 extends React.PureComponent {
+class headScreen1 extends React.PureComponent {
     constructor(){
         super();
         this.state = {
@@ -42,6 +42,7 @@ class bodyScreen1 extends React.PureComponent {
     render() {
         const { title } = this.props.navigation.state.params;
         this.setState( {title : title});
+
         return (
             <HandleBack onBack={this.onBack}>
                 <Container>
@@ -49,7 +50,7 @@ class bodyScreen1 extends React.PureComponent {
                         <View style={{borderWidth: 2, borderColor: '#37818e', alignItems: 'center', paddingTop: '1%'}}>
                             <CommonText text={this.state.title} size={20} />
                         </View>
-                        {title === 'ปวดท้อง, จุดเสียด' ?
+                        {title === 'เจ็บคอ, ไอ' ?
                             <View style={{flexDirection: 'row',
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
@@ -57,48 +58,25 @@ class bodyScreen1 extends React.PureComponent {
                                 <TouchableOpacity
                                     style={styles.containerButton}
                                     onPress={ () => {
-                                        this.props.REDUCER_Getdetail(`${title}, คลื่นไส้`);
-                                        this.props.navigation.navigate({routeName: BOBY_SCREEN2, params: { title: `${title}, คลื่นไส้` }});
+                                        this.props.REDUCER_Getdetail(`${title}, ปวดหัว`);
+                                        this.props.navigation.navigate({routeName: HEAD_SCREEN2, params: { title: `${title}, ปวดหัว` }});
                                     }}
                                 >
-                                    <CommonText text={'คลื่นไส้'} size={20} color={'#fff'} />
+                                    <CommonText text={'ปวดหัว'} size={20} color={'#fff'} />
                                 </TouchableOpacity>
                                 <TouchableOpacity
                                     style={styles.containerButton}
                                     onPress={ () => {
-                                        this.props.REDUCER_Getdetail(`${title}, ท้องอืด`);
-                                        this.props.navigation.navigate({routeName: BOBY_SCREEN2, params: { title: `${title}, ท้องอืด` }});
+                                        this.props.REDUCER_Getdetail(`${title}, อ่อนเพลีย`);
+                                        this.props.navigation.navigate({routeName: HEAD_SCREEN2, params: { title: `${title}, อ่อนเพลีย` }});
                                     }}
                                 >
-                                    <CommonText text={'ท้องอืด'} size={20} color={'#fff'} />
+                                    <CommonText text={'อ่อนเพลีย'} size={20} color={'#fff'} />
                                 </TouchableOpacity>
                             </View>
-                            :
-                            <View style={{flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                margin: 10}}>
-                                <TouchableOpacity
-                                    style={styles.containerButton}
-                                    onPress={ () => {
-                                        this.props.REDUCER_Getdetail(`${title}, เบื่ออาหาร`);
-                                        this.props.navigation.navigate({routeName: BOBY_SCREEN2, params: { title: `${title}, เบื่ออาหาร` }})
-                                    }}
-                                >
-                                    <CommonText text={'เบื่ออาหาร'} size={20} color={'#fff'} />
-                                </TouchableOpacity>
-                                <TouchableOpacity
-                                    style={styles.containerButton}
-                                    onPress={ () => {
-                                        this.props.REDUCER_Getdetail(`${title}, อาหารไม่ย่อย`);
-                                        this.props.navigation.navigate({routeName: BOBY_SCREEN2, params: { title: `${title}, อาหารไม่ย่อย` }});
-                                    }}
-                                >
-                                    <CommonText text={'อาหารไม่ย่อย'} size={20} color={'#fff'} />
-                                </TouchableOpacity>
-                            </View>
+                            :null
                         }
-                        {title === 'ปวดท้อง, จุดเสียด' ?
+                        {title === 'เจ็บคอ, ไอ' ?
                             <View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
                                     <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
@@ -119,27 +97,7 @@ class bodyScreen1 extends React.PureComponent {
                                     </View>
                                 </View>
                             </View>
-                            :
-                            <View>
-                                <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
-                                    <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                    <CommonText text={'โรคกระเพาะ'} size={18} />
-                                </View>
-                                <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
-                                    <View style={{flex: 1}}>
-                                        <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                        <CommonText text={'ผักชี, ขมิ้นชัน, กระเจี๊ยบเขียว'} size={18} />
-                                    </View>
-                                    <View style={{flexDirection: 'row',
-                                        justifyContent: 'flex-end'}}>
-                                        <TouchableOpacity
-                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
-                                        >
-                                            <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
-                                        </TouchableOpacity>
-                                    </View>
-                                </View>
-                            </View>
+                            :null
                         }
                     </View>
                     <SideMenu
@@ -153,8 +111,8 @@ class bodyScreen1 extends React.PureComponent {
     }
 }
 
-bodyScreen1.navigationOptions  = ({navigation}) => ({
-    headerTitle: <HeaderTitle text={'อาการส่วนลำตัว'} color={'#fff'} style={{marginLeft: '-20%'}}  />,
+headScreen1.navigationOptions  = ({navigation}) => ({
+    headerTitle: <HeaderTitle text={'อาการส่วนหัว'} color={'#fff'} style={{marginLeft: '-20%'}}  />,
 });
 
 const styles = StyleSheet.create({
@@ -184,4 +142,4 @@ export default connect(
         NavigationActions: bindActionCreators(NavigationActions, dispatch),
         REDUCER_Getdetail: bindActionCreators(AllDetailSymptom, dispatch)
     })
-)(bodyScreen1);
+)(headScreen1);

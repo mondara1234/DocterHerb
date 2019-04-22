@@ -7,13 +7,13 @@ import CommonText from '../../../common/components/CommonText';
 import SideMenu from '../../../common/components/SideMenu';
 import {SYMPTOM_SCREEN} from "../../router";
 import {HERB_SCREEN} from "../../../Herb/router";
-import {LISTHERB_SCREEN, HOME_SCREEN} from "../../../HomeMain/router";
+import {HOME_SCREEN, LISTHERB_SCREEN} from "../../../HomeMain/router";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { NavigationActions } from "react-navigation";
 import {AllDetailSymptom} from "../../redux/actions";
 
-class bodyScreen4 extends React.PureComponent {
+class headScreen13 extends React.PureComponent {
     constructor(){
         super();
         this.state = {
@@ -54,7 +54,7 @@ class bodyScreen4 extends React.PureComponent {
                             <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
                             <CommonText text={'ไข้เืลอกออก'} size={18} />
                         </View>
-                        <View style={{borderWidth: 2, borderColor: '#37818e', height:'68.5%', margin: '1%', padding: '1%'}}>
+                        <View style={{borderWidth: 2, borderColor: '#37818e', height:'72.5%', margin: '1%', padding: '1%'}}>
                             <View style={{flex: 1}}>
                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                 <CommonText text={'ใช้...แก้งานให้จบ'} size={18} />
@@ -80,8 +80,8 @@ class bodyScreen4 extends React.PureComponent {
     }
 }
 
-bodyScreen4.navigationOptions  = ({navigation}) => ({
-    headerTitle: <HeaderTitle text={'อาการส่วนลำตัว'} color={'#fff'} style={{marginLeft: '-20%'}}  />,
+headScreen13.navigationOptions  = ({navigation}) => ({
+    headerTitle: <HeaderTitle text={'อาการส่วนหัว'} color={'#fff'} style={{marginLeft: '-20%'}}  />,
 });
 
 const styles = StyleSheet.create({
@@ -111,4 +111,4 @@ export default connect(
         NavigationActions: bindActionCreators(NavigationActions, dispatch),
         REDUCER_Getdetail: bindActionCreators(AllDetailSymptom, dispatch)
     })
-)(bodyScreen4);
+)(headScreen13);

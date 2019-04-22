@@ -5,15 +5,15 @@ import HandleBack from "../../../common/components/HandleBack";
 import HeaderTitle from '../../../common/components/HeaderTitle';
 import CommonText from '../../../common/components/CommonText';
 import SideMenu from '../../../common/components/SideMenu';
-import {BOBY_SCREEN4, SYMPTOM_SCREEN} from "../../router";
-import { HERB_SCREEN} from "../../../Herb/router";
-import {LISTHERB_SCREEN, HOME_SCREEN} from "../../../HomeMain/router";
+import {HEAD_SCREEN4, SYMPTOM_SCREEN} from "../../router";
+import {HERB_SCREEN} from "../../../Herb/router";
+import {HOME_SCREEN, LISTHERB_SCREEN} from "../../../HomeMain/router";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { NavigationActions } from "react-navigation";
 import {AllDetailSymptom} from "../../redux/actions";
 
-class bodyScreen3 extends React.PureComponent {
+class headScreen3 extends React.PureComponent {
     constructor(){
         super();
         this.state = {
@@ -42,7 +42,6 @@ class bodyScreen3 extends React.PureComponent {
     render() {
         const { title } = this.props.navigation.state.params;
         this.setState( {title : title});
-
         return (
             <HandleBack onBack={this.onBack}>
                 <Container>
@@ -50,7 +49,7 @@ class bodyScreen3 extends React.PureComponent {
                         <View style={{borderWidth: 2, borderColor: '#37818e', alignItems: 'center', paddingTop: '1%'}}>
                             <CommonText text={this.state.title} size={20} />
                         </View>
-                        {title === 'ปวดท้อง, แน่นท้อง, อาหารไม่ย่อย, ท้องเฟ้อ' ?
+                        {title === 'เจ็บคอ, ไอ, อ่อนเพลีย, ตัวร้อน' ?
                             <View style={{flexDirection: 'row',
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
@@ -58,25 +57,49 @@ class bodyScreen3 extends React.PureComponent {
                                 <TouchableOpacity
                                     style={styles.containerButton}
                                     onPress={ () => {
-                                        this.props.REDUCER_Getdetail(`${title}, ปวดลิ้นปี่`);
-                                        this.props.navigation.navigate({routeName: BOBY_SCREEN4, params: { title: `${title}, ปวดลิ้นปี่` }});
+                                        this.props.REDUCER_Getdetail(`${title}, เสียงแหบ`);
+                                        this.props.navigation.navigate({routeName: HEAD_SCREEN4, params: { title: `${title}, เสียงแหบ` }});
                                     }}
                                 >
-                                    <CommonText text={'ปวดลิ้นปี่'} size={20} color={'#fff'} />
+                                    <CommonText text={'เสียงแหบ'} size={20} color={'#fff'} />
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    style={styles.containerButton}
+                                    onPress={ () => {
+                                        this.props.REDUCER_Getdetail(`${title}, หนาวสั่น`);
+                                        this.props.navigation.navigate({routeName: HEAD_SCREEN4, params: { title: `${title}, หนาวสั่น` }});
+                                    }}
+                                >
+                                    <CommonText text={'หนาวสั่น'} size={20} color={'#fff'} />
                                 </TouchableOpacity>
                             </View>
-                            :null
+                            :title === 'เจ็บคอ, ไอ, อ่อนเพลีย, ปวดเมื่อย' ?
+                                <View style={{flexDirection: 'row',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    margin: 10}}>
+                                    <TouchableOpacity
+                                        style={styles.containerButton}
+                                        onPress={ () => {
+                                            this.props.REDUCER_Getdetail(`${title}, เจ็บหน้าอก`);
+                                            this.props.navigation.navigate({routeName: HEAD_SCREEN4, params: { title: `${title}, เจ็บหน้าอก` }});
+                                        }}
+                                    >
+                                        <CommonText text={'เจ็บหน้าอก'} size={20} color={'#fff'} />
+                                    </TouchableOpacity>
+                                </View>
+                                :null
                         }
-                        {title === 'ปวดท้อง, แน่นท้อง, อาหารไม่ย่อย, ท้องเฟ้อ' ?
+                        {title === 'เจ็บคอ, ไอ, อ่อนเพลีย, ตัวร้อน' ?
                             <View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
                                     <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                    <CommonText text={'ไข้เืลอกออก'} size={18} />
+                                    <CommonText text={'โรคกรดไหลย้อน'} size={18} />
                                 </View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                        <CommonText text={'ใช้...แก้งานให้จบ'} size={18} />
+                                        <CommonText text={'ผักชี, ขมิ้นชัน'} size={18} />
                                     </View>
                                     <View style={{flexDirection: 'row',
                                         justifyContent: 'flex-end'}}>
@@ -88,37 +111,37 @@ class bodyScreen3 extends React.PureComponent {
                                     </View>
                                 </View>
                             </View>
-                            :title === 'ปวดท้อง, แน่นท้อง, เบื่ออาหาร, อุจาระไม่ออก' ?
-                            <View>
-                                <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
-                                    <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                    <CommonText text={'โรคท้องผูก'} size={18} />
-                                </View>
-                                <View style={{borderWidth: 2, borderColor: '#37818e', height:'73%', margin: '1%', padding: '1%'}}>
-                                    <View style={{flex: 1}}>
-                                        <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                        <CommonText text={'ผักชี,ขมิ้นชัน,กระเจี๊ยบเขียว,มะขามแขก,ใบมะรุม,เม็ดแมงลัก,ขี้เหล็ก'} size={18} />
+                            :title === 'เจ็บคอ, ไอ, อ่อนเพลีย, ปวดเมื่อย' ?
+                                <View>
+                                    <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
+                                        <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
+                                        <CommonText text={'โรคกรดไหลย้อน'} size={18} />
                                     </View>
-                                    <View style={{flexDirection: 'row',
-                                        justifyContent: 'flex-end'}}>
-                                        <TouchableOpacity
-                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
-                                        >
-                                            <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
-                                        </TouchableOpacity>
+                                    <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                        <View style={{flex: 1}}>
+                                            <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
+                                            <CommonText text={'ผักชี, ขมิ้นชัน'} size={18} />
+                                        </View>
+                                        <View style={{flexDirection: 'row',
+                                            justifyContent: 'flex-end'}}>
+                                            <TouchableOpacity
+                                                onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                            >
+                                                <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
+                                            </TouchableOpacity>
+                                        </View>
                                     </View>
                                 </View>
-                            </View>
-                                :title === 'ปวดท้อง, จัดเสียด, คลื่นไส้, อาเจียน' ?
+                                :title === 'เจ็บคอ, ไอ, ปวดหัว, คลื่นไส้' ?
                                     <View>
                                         <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
                                             <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                            <CommonText text={'ไข้เืลอกออก'} size={18} />
+                                            <CommonText text={'โรคกรดไหลย้อน'} size={18} />
                                         </View>
                                         <View style={{borderWidth: 2, borderColor: '#37818e', height:'75%', margin: '1%', padding: '1%'}}>
                                             <View style={{flex: 1}}>
                                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                                <CommonText text={'ใช้...แก้งานให้จบ'} size={18} />
+                                                <CommonText text={'ผักชี, ขมิ้นชัน'} size={18} />
                                             </View>
                                             <View style={{flexDirection: 'row',
                                                 justifyContent: 'flex-end'}}>
@@ -130,27 +153,7 @@ class bodyScreen3 extends React.PureComponent {
                                             </View>
                                         </View>
                                     </View>
-                                    :
-                                        <View>
-                                            <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
-                                                <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                                <CommonText text={'ไข้เืลอกออก'} size={18} />
-                                            </View>
-                                            <View style={{borderWidth: 2, borderColor: '#37818e', height:'75%', margin: '1%', padding: '1%'}}>
-                                                <View style={{flex: 1}}>
-                                                    <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                                    <CommonText text={'ใช้...แก้งานให้จบ'} size={18} />
-                                                </View>
-                                                <View style={{flexDirection: 'row',
-                                                    justifyContent: 'flex-end'}}>
-                                                    <TouchableOpacity
-                                                        onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
-                                                    >
-                                                        <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
-                                                    </TouchableOpacity>
-                                                </View>
-                                            </View>
-                                        </View>
+                                    :null
                         }
                     </View>
                     <SideMenu
@@ -164,8 +167,8 @@ class bodyScreen3 extends React.PureComponent {
     }
 }
 
-bodyScreen3.navigationOptions  = ({navigation}) => ({
-    headerTitle: <HeaderTitle text={'อาการส่วนลำตัว'} color={'#fff'} style={{marginLeft: '-20%'}}  />,
+headScreen3.navigationOptions  = ({navigation}) => ({
+    headerTitle: <HeaderTitle text={'อาการส่วนหัว'} color={'#fff'} style={{marginLeft: '-20%'}}  />,
 });
 
 const styles = StyleSheet.create({
@@ -195,4 +198,4 @@ export default connect(
         NavigationActions: bindActionCreators(NavigationActions, dispatch),
         REDUCER_Getdetail: bindActionCreators(AllDetailSymptom, dispatch)
     })
-)(bodyScreen3);
+)(headScreen3);

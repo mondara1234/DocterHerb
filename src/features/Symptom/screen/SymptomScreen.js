@@ -5,7 +5,7 @@ import { withNavigation } from "react-navigation";
 import HandleBack from "../../common/components/HandleBack";
 import SideMenu from '../../common/components/SideMenu';
 import HeaderTitle from '../../common/components/HeaderTitle';
-import {SYMPTOM_SCREEN, BOBY_SCREEN, HEAD_SCREEN} from "../router";
+import {SYMPTOM_SCREEN, BOBY_SCREEN, HEADSYM_SCREEN} from "../router";
 import {HOME_SCREEN} from "../../HomeMain/router";
 import {HERB_SCREEN} from "../../Herb/router";
 
@@ -44,7 +44,7 @@ class SymptomScreen extends React.PureComponent {
                     <View style={styles.container}>
                         <TouchableOpacity
                             style={styles.containerButton}
-                            onPress={ () => navigate({routeName: HEAD_SCREEN})}
+                            onPress={ () => navigate({routeName: HEADSYM_SCREEN})}
                         >
                             <Image
                                 style={{width: '100%', height: '50%'}}

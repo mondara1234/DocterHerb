@@ -47,7 +47,7 @@ class bodyScreen2 extends React.PureComponent {
             <HandleBack onBack={this.onBack}>
                 <Container>
                     <View style={{flex: 1}}>
-                        <View style={{borderWidth: 2, borderColor: '#37818e', alignItems: 'center'}}>
+                        <View style={{borderWidth: 2, borderColor: '#37818e', alignItems: 'center', paddingTop: '1%'}}>
                             <CommonText text={this.state.title} size={20} />
                         </View>
                         {title === 'ปวดท้อง, จุดเสียด, คลื่นไส้' ?
