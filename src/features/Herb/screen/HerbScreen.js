@@ -207,7 +207,7 @@ class herbScreen extends React.PureComponent {
                                 : null
                             }
                         </View>
-                        {loading === true && herb.length === 0 ?
+                        {loading === true && herb.length === 0 && this.state.lengthherb !== 0 ?
                             <View style={[styles.containerloading, styles.horizontal]}>
                                 <ActivityIndicator size="large" color="#0000ff" />
                             </View>
