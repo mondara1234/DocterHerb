@@ -198,18 +198,18 @@ class headScreen11 extends React.PureComponent {
                         {title === 'เจ็บคอ, น้ำมูก, มีเสมหะ' || title === 'เจ็บคอ, มีเสมหะ, น้ำมูก' ?
                             <View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
-                                    <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                    <CommonText text={'โรคภูมิแพ้'} size={18} />
+                                    <CommonText text={'คุณเป็น'} size={20} />
+                                    <CommonText text={'ภูมิแพ้'} size={18} />
                                 </View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                        <CommonText text={'เก๊กฮวย,หอมใหญ่,กระเทียม,มะกรูด'} size={18} />
+                                        <CommonText text={'เก๊กฮวย, หอมใหญ่, มะกรูด, ฟักเขียว'} size={18} />
                                     </View>
                                     <View style={{flexDirection: 'row',
                                         justifyContent: 'flex-end'}}>
                                         <TouchableOpacity
-                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ภูมิแพ้' }})}
                                         >
                                             <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                         </TouchableOpacity>
@@ -219,18 +219,18 @@ class headScreen11 extends React.PureComponent {
                             :title === 'เจ็บคอ, น้ำมูก, คัดจมูก' || title === 'เจ็บคอ, คัดจมูก, น้ำมูก'?
                             <View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
-                                    <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                    <CommonText text={'โรคกระเพาะ'} size={18} />
+                                    <CommonText text={'คุณเป็น'} size={20} />
+                                    <CommonText text={'ภูมิแพ้'} size={18} />
                                 </View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                        <CommonText text={'ผักชี, ขมิ้นชัน, กระเจี๊ยบเขียว'} size={18} />
+                                        <CommonText text={'เก๊กฮวย, หอมใหญ่, มะกรูด, พริกไทย'} size={18} />
                                     </View>
                                     <View style={{flexDirection: 'row',
                                         justifyContent: 'flex-end'}}>
                                         <TouchableOpacity
-                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ภูมิแพ้' }})}
                                         >
                                             <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                         </TouchableOpacity>
@@ -240,18 +240,18 @@ class headScreen11 extends React.PureComponent {
                                 :title === 'เจ็บคอ, น้ำมูก, จาม' || title === 'เจ็บคอ, จาม, น้ำมูก'?
                                     <View>
                                         <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
-                                            <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                            <CommonText text={'โรคกระเพาะ'} size={18} />
+                                            <CommonText text={'คุณเป็น'} size={20} />
+                                            <CommonText text={'ภูมิแพ้'} size={18} />
                                         </View>
                                         <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                             <View style={{flex: 1}}>
                                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                                <CommonText text={'ผักชี, ขมิ้นชัน, กระเจี๊ยบเขียว'} size={18} />
+                                                <CommonText text={'เก๊กฮวย, หอมใหญ่, กระเทียม'} size={18} />
                                             </View>
                                             <View style={{flexDirection: 'row',
                                                 justifyContent: 'flex-end'}}>
                                                 <TouchableOpacity
-                                                    onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                                    onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ภูมิแพ้' }})}
                                                 >
                                                     <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                                 </TouchableOpacity>
@@ -261,18 +261,18 @@ class headScreen11 extends React.PureComponent {
                                     :title === 'เจ็บคอ, มีเสมหะ, คัดจมูก' || title === 'เจ็บคอ, คัดจมูก, มีเสมหะ'?
                                         <View>
                                             <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
-                                                <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                                <CommonText text={'โรคกระเพาะ'} size={18} />
+                                                <CommonText text={'คุณเป็น'} size={20} />
+                                                <CommonText text={'ภูมิแพ้'} size={18} />
                                             </View>
                                             <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                                 <View style={{flex: 1}}>
                                                     <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                                    <CommonText text={'ผักชี, ขมิ้นชัน, กระเจี๊ยบเขียว'} size={18} />
+                                                    <CommonText text={'เก๊กฮวย, กระเทียม, มะกรูด, ฟักเขียว, ชะพลู'} size={18} />
                                                 </View>
                                                 <View style={{flexDirection: 'row',
                                                     justifyContent: 'flex-end'}}>
                                                     <TouchableOpacity
-                                                        onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                                        onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ภูมิแพ้' }})}
                                                     >
                                                         <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                                     </TouchableOpacity>
@@ -282,18 +282,18 @@ class headScreen11 extends React.PureComponent {
                                         :title === 'เจ็บคอ, มีเสมหะ, จาม' || title === 'เจ็บคอ, จาม, มีเสมหะ'?
                                             <View>
                                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
-                                                    <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                                    <CommonText text={'โรคกระเพาะ'} size={18} />
+                                                    <CommonText text={'คุณเป็น'} size={20} />
+                                                    <CommonText text={'ภูมิแพ้'} size={18} />
                                                 </View>
                                                 <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                                     <View style={{flex: 1}}>
                                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                                        <CommonText text={'ผักชี, ขมิ้นชัน, กระเจี๊ยบเขียว'} size={18} />
+                                                        <CommonText text={'เก๊กฮวย, กระเทียม, มะกรูด, ดอกคำฝอย'} size={18} />
                                                     </View>
                                                     <View style={{flexDirection: 'row',
                                                         justifyContent: 'flex-end'}}>
                                                         <TouchableOpacity
-                                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ภูมิแพ้' }})}
                                                         >
                                                             <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                                         </TouchableOpacity>
@@ -303,18 +303,18 @@ class headScreen11 extends React.PureComponent {
                                             :title === 'เจ็บคอ, คัดจมูก, จาม' || title === 'เจ็บคอ, จาม, คัดจมูก'?
                                                 <View>
                                                     <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
-                                                        <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                                        <CommonText text={'โรคกระเพาะ'} size={18} />
+                                                        <CommonText text={'คุณเป็น'} size={20} />
+                                                        <CommonText text={'ภูมิแพ้'} size={18} />
                                                     </View>
                                                     <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                                         <View style={{flex: 1}}>
                                                             <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                                            <CommonText text={'ผักชี, ขมิ้นชัน, กระเจี๊ยบเขียว'} size={18} />
+                                                            <CommonText text={'เก๊กฮวย, กระเทียม, มะกรูด, ฟักเขียว, ดอกคำฝอย'} size={18} />
                                                         </View>
                                                         <View style={{flexDirection: 'row',
                                                             justifyContent: 'flex-end'}}>
                                                             <TouchableOpacity
-                                                                onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                                                onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ภูมิแพ้' }})}
                                                             >
                                                                 <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                                             </TouchableOpacity>

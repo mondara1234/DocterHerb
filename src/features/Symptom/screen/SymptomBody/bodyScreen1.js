@@ -112,7 +112,7 @@ class bodyScreen1 extends React.PureComponent {
                                     <View style={{flexDirection: 'row',
                                         justifyContent: 'flex-end'}}>
                                         <TouchableOpacity
-                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'โรคกรดไหลย้อน' }})}
                                         >
                                             <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                         </TouchableOpacity>
@@ -123,17 +123,17 @@ class bodyScreen1 extends React.PureComponent {
                             <View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
                                     <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                    <CommonText text={'โรคกระเพาะ'} size={18} />
+                                    <CommonText text={'เสี่ยงเป็นโรคกระเพาะ, ท้องผูก'} size={18} />
                                 </View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                        <CommonText text={'ผักชี, ขมิ้นชัน, กระเจี๊ยบเขียว'} size={18} />
+                                        <CommonText text={'ผักชี,ขมิ้นชัน,กระเจี๊ยบเขียว'} size={18} />
                                     </View>
                                     <View style={{flexDirection: 'row',
                                         justifyContent: 'flex-end'}}>
                                         <TouchableOpacity
-                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'โรคท้องผูก' }})}
                                         >
                                             <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                         </TouchableOpacity>

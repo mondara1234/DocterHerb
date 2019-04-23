@@ -51,18 +51,18 @@ class headScreen13 extends React.PureComponent {
                             <CommonText text={this.state.title} size={20} />
                         </View>
                         <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
-                            <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                            <CommonText text={'ไข้เืลอกออก'} size={18} />
+                            <CommonText text={'คุณเป็น'} size={20} />
+                            <CommonText text={'ภูมิแพ้'} size={18} />
                         </View>
                         <View style={{borderWidth: 2, borderColor: '#37818e', height:'72.5%', margin: '1%', padding: '1%'}}>
                             <View style={{flex: 1}}>
                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                <CommonText text={'ใช้...แก้งานให้จบ'} size={18} />
+                                <CommonText text={'เก๊กฮวย, หอมใหญ่, กระเทียม, มะกรูด, ฟักเขียว, ชะพลู, ดอกคำฝอย'} size={18} />
                             </View>
                             <View style={{flexDirection: 'row',
                                 justifyContent: 'flex-end'}}>
                                 <TouchableOpacity
-                                    onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                    onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ภูมิแพ้' }})}
                                 >
                                     <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                 </TouchableOpacity>

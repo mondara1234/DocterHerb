@@ -52,18 +52,18 @@ class headScreen4 extends React.PureComponent {
                         {title === 'เจ็บคอ, ไอ, อ่อนเพลีย, ตัวร้อน, เสียงแหบ' ?
                             <View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
-                                    <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                    <CommonText text={'โรคกรดไหลย้อน'} size={18} />
+                                    <CommonText text={'คุณเป็น'} size={20} />
+                                    <CommonText text={'ไข้หวัด'} size={18} />
                                 </View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height:'75%', margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                        <CommonText text={'ผักชี, ขมิ้นชัน'} size={18} />
+                                        <CommonText text={'เก๊กฮวย, ผักชีฝรั่ง, หอมแดง, อบเชย, มะนาว, ตะไคร้'} size={18} />
                                     </View>
                                     <View style={{flexDirection: 'row',
                                         justifyContent: 'flex-end'}}>
                                         <TouchableOpacity
-                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ไข้หวัด' }})}
                                         >
                                             <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                         </TouchableOpacity>
@@ -73,18 +73,18 @@ class headScreen4 extends React.PureComponent {
                             :title === 'เจ็บคอ, ไอ, อ่อนเพลีย, ตัวร้อน, หนาวสั่น' ?
                                 <View>
                                     <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
-                                        <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                        <CommonText text={'โรคกรดไหลย้อน'} size={18} />
+                                        <CommonText text={'คุณเป็น'} size={20} />
+                                        <CommonText text={'ไข้หวัด'} size={18} />
                                     </View>
                                     <View style={{borderWidth: 2, borderColor: '#37818e', height:'75%', margin: '1%', padding: '1%'}}>
                                         <View style={{flex: 1}}>
                                             <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                            <CommonText text={'ผักชี, ขมิ้นชัน'} size={18} />
+                                            <CommonText text={'เก๊กฮวย, ผักชีฝรั่ง, หอมแดง, อบเชย, ฟ้าทะลายโจร, โหระพา'} size={18} />
                                         </View>
                                         <View style={{flexDirection: 'row',
                                             justifyContent: 'flex-end'}}>
                                             <TouchableOpacity
-                                                onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                                onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ไข้หวัด' }})}
                                             >
                                                 <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                             </TouchableOpacity>
@@ -94,18 +94,18 @@ class headScreen4 extends React.PureComponent {
                                 :title === 'เจ็บคอ, ไอ, อ่อนเพลีย, ปวดเมื่อย, เจ็บหน้าอก' ?
                                     <View>
                                         <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
-                                            <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                            <CommonText text={'โรคกรดไหลย้อน'} size={18} />
+                                            <CommonText text={'คุณเป็น'} size={20} />
+                                            <CommonText text={'วัณโรค'} size={18} />
                                         </View>
                                         <View style={{borderWidth: 2, borderColor: '#37818e', height:'73%', margin: '1%', padding: '1%'}}>
                                             <View style={{flex: 1}}>
                                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                                <CommonText text={'ผักชี, ขมิ้นชัน'} size={18} />
+                                                <CommonText text={'เก๊กฮวย, ผักชีฝรั่ง, เหงือกปลาหมอ, ทองพันชั่ง, พญารากดำ, หัวข้าวเย็นใต้'} size={18} />
                                             </View>
                                             <View style={{flexDirection: 'row',
                                                 justifyContent: 'flex-end'}}>
                                                 <TouchableOpacity
-                                                    onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                                    onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'วัณโรค' }})}
                                                 >
                                                     <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                                 </TouchableOpacity>

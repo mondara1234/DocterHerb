@@ -71,17 +71,17 @@ class bodyScreen3 extends React.PureComponent {
                             <View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
                                     <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                    <CommonText text={'ไข้เืลอกออก'} size={18} />
+                                    <CommonText text={'โรคกระเพาะอาหารอักเสบ'} size={18} />
                                 </View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                        <CommonText text={'ใช้...แก้งานให้จบ'} size={18} />
+                                        <CommonText text={'ผักชี, ขมิ้นชัน, กระเจี๊ยบเขียว, มะขามแขก, ใบมะรุม, เม็ดแมงลัก'} size={18} />
                                     </View>
                                     <View style={{flexDirection: 'row',
                                         justifyContent: 'flex-end'}}>
                                         <TouchableOpacity
-                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'โรคกระเพาะอาหารอักเสบ' }})}
                                         >
                                             <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                         </TouchableOpacity>
@@ -91,66 +91,67 @@ class bodyScreen3 extends React.PureComponent {
                             :title === 'ปวดท้อง, แน่นท้อง, เบื่ออาหาร, อุจาระไม่ออก' ?
                             <View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
-                                    <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
+                                    <CommonText text={'คุณเป็นโรค'} size={20} />
                                     <CommonText text={'โรคท้องผูก'} size={18} />
                                 </View>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height:'73%', margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                        <CommonText text={'ผักชี,ขมิ้นชัน,กระเจี๊ยบเขียว,มะขามแขก,ใบมะรุม,เม็ดแมงลัก,ขี้เหล็ก'} size={18} />
+                                        <CommonText text={'ผักชี, ขมิ้นชัน, กระเจี๊ยบเขียว&&ว่านหางจระเข้&&หัวปลี, กล้วยน้ำวา'} size={18} />
                                     </View>
                                     <View style={{flexDirection: 'row',
                                         justifyContent: 'flex-end'}}>
                                         <TouchableOpacity
-                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                            onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'โรคท้องผูก' }})}
                                         >
                                             <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                         </TouchableOpacity>
                                     </View>
                                 </View>
                             </View>
-                                :title === 'ปวดท้อง, จัดเสียด, คลื่นไส้, อาเจียน' ?
+                                :title === 'ปวดท้อง, จุดเสียด, คลื่นไส้, อาเจียน' ?
                                     <View>
                                         <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
                                             <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                            <CommonText text={'ไข้เืลอกออก'} size={18} />
+                                            <CommonText text={'โรคกรดไหลย้อน'} size={18} />
                                         </View>
                                         <View style={{borderWidth: 2, borderColor: '#37818e', height:'75%', margin: '1%', padding: '1%'}}>
                                             <View style={{flex: 1}}>
                                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                                <CommonText text={'ใช้...แก้งานให้จบ'} size={18} />
+                                                <CommonText text={'ผักชี, ขมิ้นชัน, อบเชย, โหระพา, น้ำมันมะกอก'} size={18} />
                                             </View>
                                             <View style={{flexDirection: 'row',
                                                 justifyContent: 'flex-end'}}>
                                                 <TouchableOpacity
-                                                    onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                                    onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'โรคกรดไหลย้อน' }})}
                                                 >
                                                     <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                                 </TouchableOpacity>
                                             </View>
                                         </View>
                                     </View>
-                                    :
+                                    :title === 'ปวดท้อง, จุดเสียด, ท้องอืด, เรอเปรี้ยว' ?
                                         <View>
                                             <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
-                                                <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
-                                                <CommonText text={'ไข้เืลอกออก'} size={18} />
+                                                <CommonText text={'คุณเป็นโรค'} size={20} />
+                                                <CommonText text={'โรคกรดไหลย้อน'} size={18} />
                                             </View>
                                             <View style={{borderWidth: 2, borderColor: '#37818e', height:'75%', margin: '1%', padding: '1%'}}>
                                                 <View style={{flex: 1}}>
                                                     <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
-                                                    <CommonText text={'ใช้...แก้งานให้จบ'} size={18} />
+                                                    <CommonText text={'ผักชี, ขมิ้นชัน, อบเชย, โหระพา, น้ำมันมะกอก, กุยช่าย'} size={18} />
                                                 </View>
                                                 <View style={{flexDirection: 'row',
                                                     justifyContent: 'flex-end'}}>
                                                     <TouchableOpacity
-                                                        onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'ชื่อโรค' }})}
+                                                        onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: 'โรคกรดไหลย้อน' }})}
                                                     >
                                                         <CommonText text={'ดูรายละเอียดสมุนไพร...'} size={18} />
                                                     </TouchableOpacity>
                                                 </View>
                                             </View>
                                         </View>
+                                        :null
                         }
                     </View>
                     <SideMenu
