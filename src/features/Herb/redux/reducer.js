@@ -6,7 +6,7 @@ const reducer = (state = initialState, action) => {
         case ALL_HERB:
             return {
                 ...state,
-                foodMenu: action.json,
+                herb: action.json,
                 loading: false
             };
         default:

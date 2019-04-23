@@ -16,8 +16,7 @@ class DetailHerb extends React.PureComponent {
     constructor(){
         super();
         this.state = {
-            editing: true,
-            title: ''
+            editing: true
         }
     }
 
@@ -39,31 +38,34 @@ class DetailHerb extends React.PureComponent {
 
 
     render() {
-        const { title } = this.props.navigation.state.params;
-        this.setState( {title : title});
+        const { herbData } = this.props.navigation.state.params;
 
         return (
             <HandleBack onBack={this.onBack}>
                 <Container>
-                    <View style={styles.container}>
-                        <CommonText text={'ชื่อสมุนไพร'} size={20} />
-                        <View style={styles.containerimg}>
-                            <Image
-                                style={{width: 120, height: 120}}
-                                source={require('../../../../pulic/assets/img/logoApp.jpg')}
-                            />
+                    <Content style={{width: '100%'}}>
+                        <View style={styles.container}>
+                            <CommonText text={herbData.name} size={20} />
+                            <View style={styles.containerimg}>
+                                <Image
+                                    style={{width: 120, height: 120}}
+                                    source={{uri: herbData.pic}}
+                                />
+                            </View>
+                                <View style={styles.containerDetail}>
+                                    <CommonText text={'รายละเอียด'} size={20} />
+                                    <CommonText text={herbData.detail} size={18} />
+                                </View>
+                                <View style={styles.containerDetail}>
+                                    <CommonText text={'สรรพคุณ'} size={20} />
+                                    <CommonText text={herbData.properties} size={18} />
+                                </View>
+                                <View style={styles.containerDetail}>
+                                    <CommonText text={'นิยมใช้ในการรักษาโรค'} size={20} />
+                                    <CommonText text={herbData.disease} size={18} />
+                                </View>
                         </View>
-                        <Content style={{width: '100%'}}>
-                            <View style={styles.containerDetail}>
-                                <CommonText text={'รายละเอียด'} size={20} />
-                                <CommonText text={'ไข้เืลอกออก'} size={18} />
-                            </View>
-                            <View style={styles.containerDetail}>
-                                <CommonText text={'สรรพคุณ'} size={20} />
-                                <CommonText text={'ใช้...แก้งานให้จบ'} size={18} />
-                            </View>
-                        </Content>
-                    </View>
+                    </Content>
                     <SideMenu
                         homeScreen={() => this.props.navigation.navigate(HOME_SCREEN)}
                         symptomScreen={() => this.props.navigation.navigate(SYMPTOM_SCREEN)}

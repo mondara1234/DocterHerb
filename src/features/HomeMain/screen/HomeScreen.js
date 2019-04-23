@@ -1,17 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View, FlatList, BackHandler, Alert, Keyboard, Image} from 'react-native';
-import { Container, Header, Left, Thumbnail, CheckBox, Body, ListItem } from 'native-base';
+import { StyleSheet, TouchableOpacity, View, BackHandler, Alert, Keyboard, Image } from 'react-native';
+import { Container } from 'native-base';
 import Autocomplete from 'react-native-autocomplete-input';
 import Icon from "react-native-vector-icons/FontAwesome";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { NavigationActions } from "react-navigation";
 import HandleBack from "../../common/components/HandleBack";
 import SideMenu from '../../common/components/SideMenu';
-import CommonText from '../../common/components/CommonText';
 import HeaderTitle from '../../common/components/HeaderTitle';
-import HeaderLeftMenu from '../../common/components/HeaderLeftMenu';
-import {HOME_SCREEN} from "../router";
+import {HOME_SCREEN, LISTHERB_SCREEN} from "../router";
 import {HERB_SCREEN} from "../../Herb/router";
 import {SYMPTOM_SCREEN} from "../../Symptom/router";
 
@@ -77,7 +72,10 @@ class homeScreen extends React.PureComponent {
                                     <TouchableOpacity onPress={() => this.BtnClear()} >
                                         <Icon name={'close'} size={25} />
                                     </TouchableOpacity>
-                                    <TouchableOpacity onPress={() => this.BtnClear()} style={{marginLeft: 10}} >
+                                    <TouchableOpacity
+                                        style={{marginLeft: 10}}
+                                        onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: this.state.query }})}
+                                    >
                                         <Icon name={'search'} size={25} />
                                     </TouchableOpacity>
                                 </View>
@@ -151,19 +149,3 @@ const styles = StyleSheet.create({
 
 export default homeScreen ;
 
-// function mapStateToProps(state) {
-//     return{
-//         FoodMenu: state.dataMenuFood,
-//         FoodType: state.dataMenuFood
-//     };
-// }
-//
-// export default connect(
-//     mapStateToProps,
-//     (dispatch) => ({
-//         NavigationActions: bindActionCreators(NavigationActions, dispatch),
-//         REDUCER_GetMenuFood: bindActionCreators(AllMenuFood, dispatch),
-//         REDUCER_GetFoodType: bindActionCreators(AllFoodType, dispatch),
-//         REDUCER_ROUNTNAME: bindActionCreators(getRouteName, dispatch),
-//     })
-// )(homeScreen);

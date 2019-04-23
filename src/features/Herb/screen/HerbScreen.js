@@ -11,7 +11,7 @@ import SideMenu from '../../common/components/SideMenu';
 import CommonText from '../../common/components/CommonText';
 import HeaderTitle from '../../common/components/HeaderTitle';
 import HeaderLeftMenu from '../../common/components/HeaderLeftMenu';
-import {HERB_SCREEN} from "../router";
+import {DETAILHERB_SCREEN, HERB_SCREEN} from "../router";
 import {HOME_SCREEN} from "../../HomeMain/router";
 import {SYMPTOM_SCREEN} from "../../Symptom/router";
 import { AllHerb } from "../../Herb/redux/actions";
@@ -158,19 +158,18 @@ class herbScreen extends React.PureComponent {
             <View style={styles.containerRenderItem}>
                 <ListItem  thumbnail
                            style={styles.listItem}
-                           //onPress={() => this.props.navigation.navigate({routeName: FOODDETAIL_SCREEN, params: {foodData: item}}) }
+                           onPress={() => this.props.navigation.navigate({routeName: DETAILHERB_SCREEN, params: {herbData: item}}) }
                 >
                     <Left>
                         <Thumbnail
-                            source={{uri: item.properties}}
+                            source={{uri: item.pic}}
                             style={{ width: 60, height: 60}}
                         />
                     </Left>
                     <Body>
                     <View style={styles.bodyRendsrItem}>
-                        <View>
-                            <Text numberOfLines={1} style={styles.fontbase}>{item.name}</Text>
-                        </View>
+                        <Text numberOfLines={1} style={styles.fontbase}>{item.name}</Text>
+                        <Text numberOfLines={1} style={styles.fontDisease}>{`รักษา : ${item.disease}`}</Text>
                     </View>
                     </Body>
                 </ListItem>
@@ -183,7 +182,7 @@ class herbScreen extends React.PureComponent {
             <HandleBack onBack={this.onBack}>
                 <Container>
                     <Header style={styles.bgColorApp}>
-                        <HeaderTitle text={'รายการสมุนไพร'} />
+                        <HeaderTitle text={'รายการสมุนไพร'} style={{marginLeft: '10%'}} />
                         <View style={styles.viewRowCenter}>
                             <HeaderLeftMenu
                                 icon={ (this.state.statusSort === false ? 'sort-alpha-desc':'sort-alpha-asc')}
@@ -215,10 +214,10 @@ class herbScreen extends React.PureComponent {
 
                             </View>
                             :
-                        <View>
+                        <View style={styles.containerFlasList}>
                             <View style={styles.viewNumberFound}>
                                 <CommonText text={'จำนวนที่พบ'} style={styles.fonttitleFoodType} />
-                                <CommonText text={this.state.lengthFoodType} style={styles.fontFoodType} />
+                                <CommonText text={this.state.lengthherb} style={styles.fontFoodType} />
                                 <CommonText text={'รายการ'} style={styles.fonttitleFoodType} />
                             </View>
                             <View style={styles.containerFlasList}>
@@ -261,9 +260,9 @@ const styles = StyleSheet.create({
     containerSearch: {
         height: 40,
         backgroundColor:'#F4F4F4',
-        color:'#068e81',
+        color:'#37818e',
         borderWidth: 2,
-        borderColor: '#068e81',
+        borderColor: '#37818e',
     },
     btnClear: {
         height:50,
@@ -278,7 +277,7 @@ const styles = StyleSheet.create({
         height: 70,
         backgroundColor: "#F4F4F4",
         borderWidth: 1 ,
-        borderColor: '#068e81'
+        borderColor: '#37818e'
     },
     listItem: {
         backgroundColor: 'transparent',
@@ -288,9 +287,7 @@ const styles = StyleSheet.create({
     },
     bodyRendsrItem: {
         width: '100%',
-        backgroundColor: "#F4F4F4",
-        flexDirection: 'row',
-        justifyContent: 'space-between'
+        backgroundColor: 'transparent'
     },
     fontbase: {
         fontSize: 18,
@@ -298,9 +295,9 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         fontWeight: 'bold'
     },
-    fontCalorie: {
+    fontDisease: {
         fontSize: 14,
-        color: '#068e81'
+        color: '#37818e'
     },
     viewCenter: {
         alignItems: 'center',
@@ -314,7 +311,7 @@ const styles = StyleSheet.create({
         fontSize: 16
     },
     bgColorApp: {
-        backgroundColor: '#068e81'
+        backgroundColor: '#37818e'
     },
     viewRowCenter: {
         flexDirection: 'row',
@@ -324,7 +321,7 @@ const styles = StyleSheet.create({
     containerCheckBox: {
         width: '99.9%',
         borderWidth: 1,
-        borderColor: '#068E81'
+        borderColor: '#37818e'
     },
     containerViewSearch: {
         height: 50,
@@ -338,7 +335,7 @@ const styles = StyleSheet.create({
     viewNumberFound: {
         width: '100%',
         height: 40,
-        backgroundColor: "#068e81",
+        backgroundColor: "#37818e",
         flexDirection: 'row',
         alignItems: 'center'
     },
