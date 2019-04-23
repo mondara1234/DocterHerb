@@ -72,7 +72,10 @@ class homeScreen extends React.PureComponent {
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         style={{marginLeft: 10}}
-                                        onPress={ () => this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: this.state.query }})}
+                                        onPress={ () => {
+                                            Keyboard.dismiss();
+                                            this.props.navigation.navigate({routeName: LISTHERB_SCREEN, params: { title: this.state.query }});
+                                        }}
                                     >
                                         <Icon name={'search'} size={25} />
                                     </TouchableOpacity>
