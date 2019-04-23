@@ -52,11 +52,11 @@ class bodyScreen extends React.PureComponent {
                             <TouchableOpacity
                                 style={styles.containerButton}
                                 onPress={ () => {
-                                    this.props.REDUCER_Getdetail('ปวดท้อง, จุดเสียด');
-                                    this.props.navigation.navigate({routeName: BOBY_SCREEN1, params: { title: 'ปวดท้อง, จุดเสียด' }});
+                                    this.props.REDUCER_Getdetail('ปวดท้อง, จุกเสียด');
+                                    this.props.navigation.navigate({routeName: BOBY_SCREEN1, params: { title: 'ปวดท้อง, จุกเสียด' }});
                                 }}
                             >
-                                <CommonText text={'จุดเสียด'} size={20} color={'#fff'} />
+                                <CommonText text={'จุกเสียด'} size={20} color={'#fff'} />
                             </TouchableOpacity>
                             <TouchableOpacity
                                 style={styles.containerButton}

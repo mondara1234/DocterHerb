@@ -106,7 +106,7 @@ class bodyScreen3 extends React.PureComponent {
                                     </View>
                                 </View>
                             </View>
-                                :title === 'ปวดท้อง, จุดเสียด, คลื่นไส้, อาเจียน' ?
+                                :title === 'ปวดท้อง, จุกเสียด, คลื่นไส้, อาเจียน' ?
                                     <View>
                                         <View style={styles.viewDisease}>
                                             <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
@@ -127,7 +127,7 @@ class bodyScreen3 extends React.PureComponent {
                                             </View>
                                         </View>
                                     </View>
-                                    :title === 'ปวดท้อง, จุดเสียด, ท้องอืด, เรอเปรี้ยว' ?
+                                    :title === 'ปวดท้อง, จุกเสียด, ท้องอืด, เรอเปรี้ยว' ?
                                         <View>
                                             <View style={styles.viewDisease}>
                                                 <CommonText text={'คุณเป็นโรค'} size={20} />

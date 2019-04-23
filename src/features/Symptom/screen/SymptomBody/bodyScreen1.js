@@ -51,7 +51,7 @@ class bodyScreen1 extends React.PureComponent {
                         <View style={styles.containerTitle}>
                             <CommonText text={this.state.title} size={20} />
                         </View>
-                        {title === 'ปวดท้อง, จุดเสียด' ?
+                        {title === 'ปวดท้อง, จุกเสียด' ?
                             <View style={styles.containerTouch}>
                                 <TouchableOpacity
                                     style={styles.containerButton}
@@ -94,7 +94,7 @@ class bodyScreen1 extends React.PureComponent {
                                 </TouchableOpacity>
                             </View>
                         }
-                        {title === 'ปวดท้อง, จุดเสียด' ?
+                        {title === 'ปวดท้อง, จุกเสียด' ?
                             <View>
                                 <View style={styles.viewDisease}>
                                     <CommonText text={'เสี่ยงเป็นโรค'} size={20} />

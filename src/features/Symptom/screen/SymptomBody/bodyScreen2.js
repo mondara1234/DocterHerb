@@ -52,7 +52,7 @@ class bodyScreen2 extends React.PureComponent {
                         <View style={styles.containerTitle}>
                             <CommonText text={this.state.title} size={20} />
                         </View>
-                        {title === 'ปวดท้อง, จุดเสียด, คลื่นไส้' ?
+                        {title === 'ปวดท้อง, จุกเสียด, คลื่นไส้' ?
                             <View style={styles.containerTouch}>
                                 <TouchableOpacity
                                     style={styles.containerButton}
@@ -64,7 +64,7 @@ class bodyScreen2 extends React.PureComponent {
                                     <CommonText text={'อาเจียน'} size={20} color={'#fff'} />
                                 </TouchableOpacity>
                             </View>
-                            : title === 'ปวดท้อง, จุดเสียด, ท้องอืด' ?
+                            : title === 'ปวดท้อง, จุกเสียด, ท้องอืด' ?
                             <View style={styles.containerTouch}>
                                 <TouchableOpacity
                                     style={styles.containerButton}
@@ -105,7 +105,7 @@ class bodyScreen2 extends React.PureComponent {
                                         </View>
                                         :null
                         }
-                        {title === 'ปวดท้อง, จุดเสียด, คลื่นไส้' ?
+                        {title === 'ปวดท้อง, จุกเสียด, คลื่นไส้' ?
                             <View>
                                 <View style={styles.viewDisease}>
                                     <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
@@ -126,7 +126,7 @@ class bodyScreen2 extends React.PureComponent {
                                     </View>
                                 </View>
                             </View>
-                            : title === 'ปวดท้อง, จุดเสียด, ท้องอืด' ?
+                            : title === 'ปวดท้อง, จุกเสียด, ท้องอืด' ?
                                 <View>
                                     <View style={styles.viewDisease}>
                                         <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
