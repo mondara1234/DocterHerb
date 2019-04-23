@@ -176,6 +176,7 @@ class herbScreen extends React.PureComponent {
 
     render() {
         const loading = this.props.dataherb.loading;
+        const herb = this.props.dataherb.herb;
         return (
             <HandleBack onBack={this.onBack}>
                 <Container>
@@ -206,7 +207,7 @@ class herbScreen extends React.PureComponent {
                                 : null
                             }
                         </View>
-                        {loading === true ?
+                        {loading === true && herb.length === 0 ?
                             <View style={[styles.containerloading, styles.horizontal]}>
                                 <ActivityIndicator size="large" color="#0000ff" />
                             </View>
