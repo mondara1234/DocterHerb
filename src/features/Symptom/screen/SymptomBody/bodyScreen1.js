@@ -98,7 +98,7 @@ class bodyScreen1 extends React.PureComponent {
                                     <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
                                     <CommonText text={'โรคกรดไหลย้อน'} size={18} />
                                 </View>
-                                <View style={styles.viewHerb}>
+                                <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                         <CommonText text={'ผักชี, ขมิ้นชัน'} size={18} />
@@ -118,7 +118,7 @@ class bodyScreen1 extends React.PureComponent {
                                     <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
                                     <CommonText text={'เสี่ยงเป็นโรคกระเพาะ, ท้องผูก'} size={18} />
                                 </View>
-                                <View style={styles.viewHerb}>
+                                <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                         <CommonText text={'ผักชี,ขมิ้นชัน,กระเจี๊ยบเขียว'} size={18} />
@@ -172,14 +172,6 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: '#37818e',
         height: 100 ,
-        margin: '1%',
-        padding: '1%'
-    },
-    viewHerb: {
-        borderWidth: 2,
-        borderColor: '#37818e',
-        flex: 1,
-        height:'71%',
         margin: '1%',
         padding: '1%'
     }
