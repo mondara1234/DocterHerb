@@ -4,5 +4,3 @@ export const AllDetailSymptom = (data) => ({
     type: ALL_DETAILSYMPTOM,
     json: data
 });
-
-

@@ -4,5 +4,3 @@ export const AllHerb = (data) => ({
     type: ALL_HERB,
     json: data
 });
-
-

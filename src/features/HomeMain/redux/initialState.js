@@ -1,8 +1,6 @@
-
 const initialState = {
     dataList: [],
-    dataname:'',
-    loading : false
+    loading : true
 };
 
 export default initialState;

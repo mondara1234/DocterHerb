@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View, FlatList, BackHandler, Alert, Keyboard, Image} from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View, FlatList, BackHandler, Alert, Keyboard } from 'react-native';
 import { Container, Header, Left, Thumbnail, Body, ListItem } from 'native-base';
 import Autocomplete from 'react-native-autocomplete-input';
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -11,11 +11,11 @@ import SideMenu from '../../common/components/SideMenu';
 import CommonText from '../../common/components/CommonText';
 import HeaderTitle from '../../common/components/HeaderTitle';
 import HeaderLeftMenu from '../../common/components/HeaderLeftMenu';
-import {DETAILHERB_SCREEN, HERB_SCREEN} from "../router";
-import {HOME_SCREEN} from "../../HomeMain/router";
-import {SYMPTOM_SCREEN} from "../../Symptom/router";
+import { DETAILHERB_SCREEN, HERB_SCREEN } from "../router";
+import { HOME_SCREEN } from "../../HomeMain/router";
+import { SYMPTOM_SCREEN } from "../../Symptom/router";
 import { AllHerb } from "../../Herb/redux/actions";
-import {SERVER_URL} from "../../../common/constants";
+import { SERVER_URL } from "../../../common/constants";
 
 class herbScreen extends React.PureComponent {
     constructor(props) {
@@ -23,15 +23,12 @@ class herbScreen extends React.PureComponent {
         this.state = {
             films: [],
             setDataherb: [],
-            dataherb: [],
-            nameherb: '',
             lengthherb: 0,
             query: '',
             editing: true,
             statusSort: false
         };
     }
-
 
     onBack = () => {
         if (this.state.editing) {
@@ -60,13 +57,11 @@ class herbScreen extends React.PureComponent {
             .catch((error) => {
                 console.error(error);
             });
-        console.log('asdasd',response);
         this.props.REDUCER_GetHerb(response);
         const dataherb = this.props.dataherb.herb;
-        console.log('dataherb =',dataherb);
         this.setState({
             films: dataherb,
-            setDataFood: dataherb,
+            setDataherb: dataherb,
             lengthherb: dataherb.length
         })
     }
@@ -76,8 +71,8 @@ class herbScreen extends React.PureComponent {
         const response = this.state.films;
         if(this.state.statusSort === false){
             response.sort(function (a, b) {
-                if(a.FoodName < b.FoodName) { return -1; }
-                if(a.FoodName > b.FoodName) { return 1; }
+                if(a.name < b.name) { return -1; }
+                if(a.name > b.name) { return 1; }
                 return 0;
             });
             this.setState({
@@ -86,8 +81,8 @@ class herbScreen extends React.PureComponent {
             });
         }else{
             response.reverse(function(a, b){
-                if(a.FoodName < b.FoodName) { return -1; }
-                if(a.FoodName > b.FoodName) { return 1; }
+                if(a.name < b.name) { return -1; }
+                if(a.name > b.name) { return 1; }
                 return 0;
             });
             this.setState({
@@ -100,7 +95,7 @@ class herbScreen extends React.PureComponent {
     //ไว้รับค่าแล้วค้นหา
     findFilm(value) {
         this.setState({query: value});
-        let data = this.state.setDataFood;
+        let data = this.state.setDataherb;
         if (value === '') {
             this.setState({
                 films: data,
@@ -167,10 +162,10 @@ class herbScreen extends React.PureComponent {
                         />
                     </Left>
                     <Body>
-                    <View style={styles.bodyRendsrItem}>
-                        <Text numberOfLines={1} style={styles.fontbase}>{item.name}</Text>
-                        <Text numberOfLines={1} style={styles.fontDisease}>{`รักษา : ${item.disease}`}</Text>
-                    </View>
+                        <View style={styles.bodyRendsrItem}>
+                            <Text numberOfLines={1} style={styles.fontbase}>{item.name}</Text>
+                            <Text numberOfLines={1} style={styles.fontDisease}>{`รักษา : ${item.disease}`}</Text>
+                        </View>
                     </Body>
                 </ListItem>
             </View>
@@ -178,6 +173,7 @@ class herbScreen extends React.PureComponent {
     };
 
     render() {
+        const loading = this.props.dataherb.loading;
         return (
             <HandleBack onBack={this.onBack}>
                 <Container>
@@ -208,7 +204,11 @@ class herbScreen extends React.PureComponent {
                                 : null
                             }
                         </View>
-                        {this.state.lengthherb === 0 ?
+                        {loading === true ?
+                            <View style={[styles.containerloading, styles.horizontal]}>
+                                <ActivityIndicator size="large" color="#0000ff" />
+                            </View>
+                        :this.state.lengthherb === 0 ?
                             <View style={{flex: 1}}>
                                 <CommonText text={'ไม่พบข้อมูล'} style={{fontSize: 30, marginTop: '40%'}} />
 
@@ -216,9 +216,9 @@ class herbScreen extends React.PureComponent {
                             :
                         <View style={styles.containerFlasList}>
                             <View style={styles.viewNumberFound}>
-                                <CommonText text={'จำนวนที่พบ'} style={styles.fonttitleFoodType} />
-                                <CommonText text={this.state.lengthherb} style={styles.fontFoodType} />
-                                <CommonText text={'รายการ'} style={styles.fonttitleFoodType} />
+                                <CommonText text={'จำนวนที่พบ'} style={styles.fonttitleherb} />
+                                <CommonText text={this.state.lengthherb} style={styles.fontherb} />
+                                <CommonText text={'รายการ'} style={styles.fonttitleherb} />
                             </View>
                             <View style={styles.containerFlasList}>
                                 <FlatList
@@ -247,6 +247,15 @@ herbScreen.navigationOptions  = ({navigation}) => ({
 });
 
 const styles = StyleSheet.create({
+    containerloading: {
+        flex: 1,
+        justifyContent: 'center'
+    },
+    horizontal: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        padding: 10
+    },
     container: {
         backgroundColor: '#F4F4F4',
         flex: 1,
@@ -263,14 +272,6 @@ const styles = StyleSheet.create({
         color:'#37818e',
         borderWidth: 2,
         borderColor: '#37818e',
-    },
-    btnClear: {
-        height:50,
-        backgroundColor: 'white',
-        alignItems: 'center',
-        flexDirection: 'row',
-        paddingRight: 10,
-        paddingLeft: 10
     },
     containerRenderItem: {
         width: '100%',
@@ -299,17 +300,6 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#37818e'
     },
-    viewCenter: {
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    listCheckBox: {
-        backgroundColor: '#F4F4F4',
-        borderBottomWidth: 0
-    },
-    fontCheckBox: {
-        fontSize: 16
-    },
     bgColorApp: {
         backgroundColor: '#37818e'
     },
@@ -317,11 +307,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    containerCheckBox: {
-        width: '99.9%',
-        borderWidth: 1,
-        borderColor: '#37818e'
     },
     containerViewSearch: {
         height: 50,
@@ -339,12 +324,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center'
     },
-    fonttitleFoodType: {
+    fonttitleherb: {
         fontSize: 14,
         color: '#fff',
         marginLeft: 10
     },
-    fontFoodType: {
+    fontherb: {
         fontSize: 16,
         color: '#fff',
         marginLeft: 5,

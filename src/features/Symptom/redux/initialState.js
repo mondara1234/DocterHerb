@@ -1,7 +1,6 @@
-
 const initialState = {
     detailSymptom: '',
-    loading : false
+    loading : true
 };
 
 export default initialState;

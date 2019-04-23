@@ -1,16 +1,16 @@
 import React from 'react';
 import { Alert, BackHandler, StyleSheet, TouchableOpacity, View, Image } from 'react-native';
-import { Container ,Card, Content } from 'native-base';
+import { Container ,Content } from 'native-base';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { NavigationActions } from "react-navigation";
 import HandleBack from "../../common/components/HandleBack";
 import HeaderTitle from '../../common/components/HeaderTitle';
 import CommonText from '../../common/components/CommonText';
 import SideMenu from '../../common/components/SideMenu';
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { NavigationActions } from "react-navigation";
-import {HERB_SCREEN} from "../router";
-import {SYMPTOM_SCREEN} from "../../Symptom/router";
-import {HOME_SCREEN} from "../../HomeMain/router";
+import { HERB_SCREEN } from "../router";
+import { SYMPTOM_SCREEN } from "../../Symptom/router";
+import { HOME_SCREEN } from "../../HomeMain/router";
 
 class DetailHerb extends React.PureComponent {
     constructor(){
@@ -35,7 +35,6 @@ class DetailHerb extends React.PureComponent {
         }
         return false;
     };
-
 
     render() {
         const { herbData } = this.props.navigation.state.params;

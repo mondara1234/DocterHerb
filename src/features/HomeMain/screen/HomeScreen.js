@@ -6,16 +6,14 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import HandleBack from "../../common/components/HandleBack";
 import SideMenu from '../../common/components/SideMenu';
 import HeaderTitle from '../../common/components/HeaderTitle';
-import {HOME_SCREEN, LISTHERB_SCREEN} from "../router";
-import {HERB_SCREEN} from "../../Herb/router";
-import {SYMPTOM_SCREEN} from "../../Symptom/router";
+import { HOME_SCREEN, LISTHERB_SCREEN } from "../router";
+import { HERB_SCREEN } from "../../Herb/router";
+import { SYMPTOM_SCREEN } from "../../Symptom/router";
 
 class homeScreen extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            films: [],
-            setDataFood: [],
             query: '',
             editing: true
         };
@@ -40,15 +38,10 @@ class homeScreen extends React.PureComponent {
     //ไว้รับค่าแล้วค้นหา
     findFilm(value) {
         this.setState({query: value});
-        console.log('date =' , this.state.query);
     }
 
     BtnClear(){ // ปุ่ม x (ลบ)
-        let data = this.state.setDataFood;
-        this.setState({
-            films: data,
-            query: ''
-        })
+        this.setState({query: ''});
     }
 
     render() {
@@ -121,20 +114,6 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: '#37818e',
     },
-    btnClear: {
-        height:50,
-        backgroundColor: 'white',
-        alignItems: 'center',
-        flexDirection: 'row',
-        paddingRight: 10,
-        paddingLeft: 10
-    },
-    fontbase: {
-        fontSize: 18,
-        color: '#020202',
-        marginBottom: 5,
-        fontWeight: 'bold'
-    },
     containerViewSearch: {
         height: 50,
         width: '90%',
@@ -148,4 +127,3 @@ const styles = StyleSheet.create({
 });
 
 export default homeScreen ;
-
