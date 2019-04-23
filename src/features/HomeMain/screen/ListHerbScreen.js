@@ -150,11 +150,7 @@ class ListHerbScreen extends React.PureComponent {
                             <View style={[styles.containerloading, styles.horizontal]}>
                                 <ActivityIndicator size="large" color="#0000ff" />
                             </View>
-                            :this.state.lengthherb === 0 ?
-                            <View style={{flex: 1}}>
-                                <CommonText text={'ไม่พบข้อมูล'} style={{fontSize: 30, marginTop: '40%'}} />
-                            </View>
-                            :
+                            :this.state.lengthherb !== 0 ?
                             <View style={styles.containerFlasList}>
                                 <View style={styles.viewNumberFound}>
                                     <CommonText text={'จำนวนที่พบ'} style={styles.fonttitleherb} />
@@ -170,6 +166,10 @@ class ListHerbScreen extends React.PureComponent {
                                     />
                                 </View>
                             </View>
+                                : 
+                                <View style={{flex: 1}}>
+                                    <CommonText text={'ไม่พบข้อมูล'} style={{fontSize: 30, marginTop: '40%'}} />
+                                </View>
                             }
                     </View>
                     <SideMenu
