@@ -1,6 +1,6 @@
 const initialState = {
     herb: [],
-    loading : true
+    loading : true,
 };
 
 export default initialState;

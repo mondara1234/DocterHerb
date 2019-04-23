@@ -1,5 +1,5 @@
 import initialState from './initialState';
-import { ALL_HERB } from './constants';
+import { ALL_HERB, SET_LOADING } from './constants';
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -8,6 +8,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 herb: action.json,
                 loading: false
+            };
+        case SET_LOADING:
+            return {
+                ...state,
+                loading: true
             };
         default:
             return state;

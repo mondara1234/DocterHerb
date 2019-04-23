@@ -14,7 +14,7 @@ import HeaderLeftMenu from '../../common/components/HeaderLeftMenu';
 import { DETAILHERB_SCREEN, HERB_SCREEN } from "../router";
 import { HOME_SCREEN } from "../../HomeMain/router";
 import { SYMPTOM_SCREEN } from "../../Symptom/router";
-import { AllHerb } from "../../Herb/redux/actions";
+import { AllHerb, SETLOADING } from "../../Herb/redux/actions";
 import { SERVER_URL } from "../../../common/constants";
 
 class herbScreen extends React.PureComponent {
@@ -63,7 +63,9 @@ class herbScreen extends React.PureComponent {
             films: dataherb,
             setDataherb: dataherb,
             lengthherb: dataherb.length
-        })
+        });
+
+        this.props.REDUCER_Set_loading();
     }
 
     sortFoodMenu() {
@@ -136,7 +138,7 @@ class herbScreen extends React.PureComponent {
                 lengthherb: dataherb.length
             })
         }
-
+        this.props.REDUCER_Set_loading();
     }
 
     BtnClear(){ // ปุ่ม x (ลบ)
@@ -352,7 +354,8 @@ export default connect(
     mapStateToProps,
     (dispatch) => ({
         NavigationActions: bindActionCreators(NavigationActions, dispatch),
-        REDUCER_GetHerb: bindActionCreators(AllHerb, dispatch)
+        REDUCER_GetHerb: bindActionCreators(AllHerb, dispatch),
+        REDUCER_Set_loading: bindActionCreators(SETLOADING, dispatch),
     })
 )(herbScreen);
 
