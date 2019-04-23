@@ -63,9 +63,7 @@ class herbScreen extends React.PureComponent {
             films: dataherb,
             setDataherb: dataherb,
             lengthherb: dataherb.length
-        });
-
-        this.props.REDUCER_Set_loading();
+        })
     }
 
     sortFoodMenu() {
@@ -138,7 +136,7 @@ class herbScreen extends React.PureComponent {
                 lengthherb: dataherb.length
             })
         }
-        this.props.REDUCER_Set_loading();
+
     }
 
     BtnClear(){ // ปุ่ม x (ลบ)
@@ -176,7 +174,6 @@ class herbScreen extends React.PureComponent {
 
     render() {
         const loading = this.props.dataherb.loading;
-        const herb = this.props.dataherb.herb;
         return (
             <HandleBack onBack={this.onBack}>
                 <Container>
@@ -207,7 +204,7 @@ class herbScreen extends React.PureComponent {
                                 : null
                             }
                         </View>
-                        {loading === true && herb.length === 0 && this.state.lengthherb !== 0 ?
+                        {loading === true ?
                             <View style={[styles.containerloading, styles.horizontal]}>
                                 <ActivityIndicator size="large" color="#0000ff" />
                             </View>
@@ -235,9 +232,18 @@ class herbScreen extends React.PureComponent {
                             }
                     </View>
                     <SideMenu
-                        homeScreen={() => this.props.navigation.navigate(HOME_SCREEN)}
-                        symptomScreen={() => this.props.navigation.navigate(SYMPTOM_SCREEN)}
-                        herbScreen={() => this.props.navigation.navigate(HERB_SCREEN)}
+                        homeScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.navigation.navigate(HOME_SCREEN);
+                        }}
+                        symptomScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.navigation.navigate(SYMPTOM_SCREEN);
+                        }}
+                        herbScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.navigation.navigate(HERB_SCREEN);
+                        }}
                     />
                 </Container>
             </HandleBack>
@@ -356,7 +362,7 @@ export default connect(
     (dispatch) => ({
         NavigationActions: bindActionCreators(NavigationActions, dispatch),
         REDUCER_GetHerb: bindActionCreators(AllHerb, dispatch),
-        REDUCER_Set_loading: bindActionCreators(SETLOADING, dispatch),
+        REDUCER_SetLoading: bindActionCreators(SETLOADING, dispatch)
     })
 )(herbScreen);
 

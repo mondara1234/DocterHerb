@@ -56,5 +56,4 @@ SideMenu.propTypes = {
     symptomScreen: PropTypes.func.isRequired
 };
 
-
 export default SideMenu;
