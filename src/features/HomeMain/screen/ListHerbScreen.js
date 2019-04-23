@@ -155,21 +155,21 @@ class ListHerbScreen extends React.PureComponent {
                                 <CommonText text={'ไม่พบข้อมูล'} style={{fontSize: 30, marginTop: '40%'}} />
                             </View>
                             :
-                        <View style={styles.containerFlasList}>
-                            <View style={styles.viewNumberFound}>
-                                <CommonText text={'จำนวนที่พบ'} style={styles.fonttitleherb} />
-                                <CommonText text={this.state.lengthherb} style={styles.fontherb} />
-                                <CommonText text={'รายการ'} style={styles.fonttitleherb} />
-                            </View>
                             <View style={styles.containerFlasList}>
-                                <FlatList
-                                    data={this.state.films}
-                                    extraData={this.state}
-                                    renderItem={this._renderItem}
-                                    keyExtractor={(item, index) => index}
-                                />
+                                <View style={styles.viewNumberFound}>
+                                    <CommonText text={'จำนวนที่พบ'} style={styles.fonttitleherb} />
+                                    <CommonText text={this.state.lengthherb} style={styles.fontherb} />
+                                    <CommonText text={'รายการ'} style={styles.fonttitleherb} />
+                                </View>
+                                <View style={styles.containerFlasList}>
+                                    <FlatList
+                                        data={this.state.films}
+                                        extraData={this.state}
+                                        renderItem={this._renderItem}
+                                        keyExtractor={(item, index) => index}
+                                    />
+                                </View>
                             </View>
-                        </View>
                             }
                     </View>
                     <SideMenu
