@@ -1,17 +1,19 @@
 import React from 'react';
-import { Alert, BackHandler, StyleSheet, TouchableOpacity, View, Image } from 'react-native';
-import { Container ,Card } from 'native-base';
+import { Alert, BackHandler, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Container } from 'native-base';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { NavigationActions } from "react-navigation";
 import HandleBack from "../../../common/components/HandleBack";
 import HeaderTitle from '../../../common/components/HeaderTitle';
 import CommonText from '../../../common/components/CommonText';
 import SideMenu from '../../../common/components/SideMenu';
-import {HEAD_SCREEN13, SYMPTOM_SCREEN} from "../../router";
-import {HERB_SCREEN} from "../../../Herb/router";
-import {HOME_SCREEN, LISTHERB_SCREEN} from "../../../HomeMain/router";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { NavigationActions } from "react-navigation";
-import {AllDetailSymptom} from "../../redux/actions";
+import { HEAD_SCREEN13, SYMPTOM_SCREEN } from "../../router";
+import { HERB_SCREEN} from "../../../Herb/router";
+import { HOME_SCREEN, LISTHERB_SCREEN } from "../../../HomeMain/router";
+import { AllDetailSymptom } from "../../redux/actions";
+import { SETLOAD } from "../../../HomeMain/redux/actions";
+import { SETLOADING } from "../../../Herb/redux/actions";
 
 class headScreen12 extends React.PureComponent {
     constructor(){
@@ -199,9 +201,21 @@ class headScreen12 extends React.PureComponent {
                         }
                     </View>
                     <SideMenu
-                        homeScreen={() => this.props.navigation.navigate(HOME_SCREEN)}
-                        symptomScreen={() => this.props.navigation.navigate(SYMPTOM_SCREEN)}
-                        herbScreen={() => this.props.navigation.navigate(HERB_SCREEN)}
+                        homeScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HOME_SCREEN);
+                        }}
+                        symptomScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(SYMPTOM_SCREEN);
+                        }}
+                        herbScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HERB_SCREEN);
+                        }}
                     />
                 </Container>
             </HandleBack>
@@ -238,6 +252,8 @@ export default connect(
     mapStateToProps,
     (dispatch) => ({
         NavigationActions: bindActionCreators(NavigationActions, dispatch),
-        REDUCER_Getdetail: bindActionCreators(AllDetailSymptom, dispatch)
+        REDUCER_Getdetail: bindActionCreators(AllDetailSymptom, dispatch),
+        REDUCER_SetLoading: bindActionCreators(SETLOADING, dispatch),
+        REDUCER_SetLoadinglist: bindActionCreators(SETLOAD, dispatch)
     })
 )(headScreen12);

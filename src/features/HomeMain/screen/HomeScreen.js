@@ -3,12 +3,17 @@ import { StyleSheet, TouchableOpacity, View, BackHandler, Alert, Keyboard, Image
 import { Container } from 'native-base';
 import Autocomplete from 'react-native-autocomplete-input';
 import Icon from "react-native-vector-icons/FontAwesome";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { NavigationActions } from "react-navigation";
 import HandleBack from "../../common/components/HandleBack";
 import SideMenu from '../../common/components/SideMenu';
 import HeaderTitle from '../../common/components/HeaderTitle';
 import { HOME_SCREEN, LISTHERB_SCREEN } from "../router";
 import { HERB_SCREEN } from "../../Herb/router";
 import { SYMPTOM_SCREEN } from "../../Symptom/router";
+import { SETLOAD } from "../redux/actions";
+import { SETLOADING } from "../../Herb/redux/actions";
 
 class homeScreen extends React.PureComponent {
     constructor(props) {
@@ -81,9 +86,21 @@ class homeScreen extends React.PureComponent {
                         />
                     </View>
                     <SideMenu
-                        homeScreen={() => this.props.navigation.navigate(HOME_SCREEN)}
-                        symptomScreen={() => this.props.navigation.navigate(SYMPTOM_SCREEN)}
-                        herbScreen={() => this.props.navigation.navigate(HERB_SCREEN)}
+                        homeScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HOME_SCREEN);
+                        }}
+                        symptomScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(SYMPTOM_SCREEN);
+                        }}
+                        herbScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HERB_SCREEN);
+                        }}
                     />
                 </Container>
             </HandleBack>
@@ -126,4 +143,11 @@ const styles = StyleSheet.create({
 
 });
 
-export default homeScreen ;
+export default connect(
+    null,
+    (dispatch) => ({
+        NavigationActions: bindActionCreators(NavigationActions, dispatch),
+        REDUCER_SetLoading: bindActionCreators(SETLOADING, dispatch),
+        REDUCER_SetLoadinglist: bindActionCreators(SETLOAD, dispatch)
+    })
+)(homeScreen);

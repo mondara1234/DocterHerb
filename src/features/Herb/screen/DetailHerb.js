@@ -11,6 +11,8 @@ import SideMenu from '../../common/components/SideMenu';
 import { HERB_SCREEN } from "../router";
 import { SYMPTOM_SCREEN } from "../../Symptom/router";
 import { HOME_SCREEN } from "../../HomeMain/router";
+import { SETLOAD } from "../../HomeMain/redux/actions";
+import { SETLOADING } from "../redux/actions";
 
 class DetailHerb extends React.PureComponent {
     constructor(){
@@ -66,9 +68,21 @@ class DetailHerb extends React.PureComponent {
                         </View>
                     </Content>
                     <SideMenu
-                        homeScreen={() => this.props.navigation.navigate(HOME_SCREEN)}
-                        symptomScreen={() => this.props.navigation.navigate(SYMPTOM_SCREEN)}
-                        herbScreen={() => this.props.navigation.navigate(HERB_SCREEN)}
+                        homeScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HOME_SCREEN);
+                        }}
+                        symptomScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(SYMPTOM_SCREEN);
+                        }}
+                        herbScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HERB_SCREEN);
+                        }}
                     />
                 </Container>
             </HandleBack>
@@ -106,5 +120,7 @@ export default connect(
     null,
     (dispatch) => ({
         NavigationActions: bindActionCreators(NavigationActions, dispatch),
+        REDUCER_SetLoading: bindActionCreators(SETLOADING, dispatch),
+        REDUCER_SetLoadinglist: bindActionCreators(SETLOAD, dispatch)
     })
 )(DetailHerb);

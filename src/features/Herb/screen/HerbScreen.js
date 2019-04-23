@@ -15,6 +15,7 @@ import { DETAILHERB_SCREEN, HERB_SCREEN } from "../router";
 import { HOME_SCREEN } from "../../HomeMain/router";
 import { SYMPTOM_SCREEN } from "../../Symptom/router";
 import { AllHerb, SETLOADING } from "../../Herb/redux/actions";
+import { SETLOAD } from "../../HomeMain/redux/actions";
 import { SERVER_URL } from "../../../common/constants";
 
 class herbScreen extends React.PureComponent {
@@ -234,14 +235,17 @@ class herbScreen extends React.PureComponent {
                     <SideMenu
                         homeScreen={() => {
                             this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
                             this.props.navigation.navigate(HOME_SCREEN);
                         }}
                         symptomScreen={() => {
                             this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
                             this.props.navigation.navigate(SYMPTOM_SCREEN);
                         }}
                         herbScreen={() => {
                             this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
                             this.props.navigation.navigate(HERB_SCREEN);
                         }}
                     />
@@ -362,7 +366,8 @@ export default connect(
     (dispatch) => ({
         NavigationActions: bindActionCreators(NavigationActions, dispatch),
         REDUCER_GetHerb: bindActionCreators(AllHerb, dispatch),
-        REDUCER_SetLoading: bindActionCreators(SETLOADING, dispatch)
+        REDUCER_SetLoading: bindActionCreators(SETLOADING, dispatch),
+        REDUCER_SetLoadinglist: bindActionCreators(SETLOAD, dispatch)
     })
 )(herbScreen);
 

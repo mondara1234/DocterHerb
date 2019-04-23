@@ -12,8 +12,9 @@ import HeaderLeftMenu from '../../common/components/HeaderLeftMenu';
 import { HOME_SCREEN } from "../router";
 import { HERB_SCREEN, DETAILHERB_SCREEN } from "../../Herb/router";
 import { SYMPTOM_SCREEN } from "../../Symptom/router";
-import { AllLISTHERBDATA } from "../../HomeMain/redux/actions";
+import { AllLISTHERBDATA, SETLOAD } from "../redux/actions";
 import { SERVER_URL } from "../../../common/constants";
+import { SETLOADING } from "../../Herb/redux/actions";
 
 class ListHerbScreen extends React.PureComponent {
     constructor(props) {
@@ -166,16 +167,28 @@ class ListHerbScreen extends React.PureComponent {
                                     />
                                 </View>
                             </View>
-                                : 
+                                :
                                 <View style={{flex: 1}}>
                                     <CommonText text={'ไม่พบข้อมูล'} style={{fontSize: 30, marginTop: '40%'}} />
                                 </View>
                             }
                     </View>
                     <SideMenu
-                        homeScreen={() => this.props.navigation.navigate(HOME_SCREEN)}
-                        symptomScreen={() => this.props.navigation.navigate(SYMPTOM_SCREEN)}
-                        herbScreen={() => this.props.navigation.navigate(HERB_SCREEN)}
+                        homeScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HOME_SCREEN);
+                        }}
+                        symptomScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(SYMPTOM_SCREEN);
+                        }}
+                        herbScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HERB_SCREEN);
+                        }}
                     />
                 </Container>
             </HandleBack>
@@ -293,6 +306,8 @@ export default connect(
     mapStateToProps,
     (dispatch) => ({
         NavigationActions: bindActionCreators(NavigationActions, dispatch),
-        REDUCER_GetHerb: bindActionCreators(AllLISTHERBDATA, dispatch)
+        REDUCER_GetHerb: bindActionCreators(AllLISTHERBDATA, dispatch),
+        REDUCER_SetLoading: bindActionCreators(SETLOADING, dispatch),
+        REDUCER_SetLoadinglist: bindActionCreators(SETLOAD, dispatch)
     })
 )(ListHerbScreen);

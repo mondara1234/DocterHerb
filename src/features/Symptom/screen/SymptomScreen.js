@@ -1,13 +1,17 @@
 import React from 'react';
 import { Alert, BackHandler, StyleSheet, TouchableOpacity, View, Image } from 'react-native';
 import { Container } from 'native-base';
-import { withNavigation } from "react-navigation";
+import { NavigationActions } from "react-navigation";
+import {connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import HandleBack from "../../common/components/HandleBack";
 import SideMenu from '../../common/components/SideMenu';
 import HeaderTitle from '../../common/components/HeaderTitle';
 import { SYMPTOM_SCREEN, BOBY_SCREEN, HEADSYM_SCREEN } from "../router";
 import { HOME_SCREEN } from "../../HomeMain/router";
 import { HERB_SCREEN } from "../../Herb/router";
+import { SETLOAD } from "../../HomeMain/redux/actions";
+import { AllHerb, SETLOADING } from "../../Herb/redux/actions";
 
 class SymptomScreen extends React.PureComponent {
     constructor(){
@@ -35,15 +39,13 @@ class SymptomScreen extends React.PureComponent {
 
 
     render() {
-        const { navigate } = this.props.navigation;
-
         return (
             <HandleBack onBack={this.onBack}>
                 <Container>
                     <View style={styles.container}>
                         <TouchableOpacity
                             style={styles.containerButton}
-                            onPress={ () => navigate({routeName: HEADSYM_SCREEN})}
+                            onPress={ () => this.props.navigation.navigate({routeName: HEADSYM_SCREEN})}
                         >
                             <Image
                                 style={{width: '100%', height: '50%'}}
@@ -52,7 +54,7 @@ class SymptomScreen extends React.PureComponent {
                         </TouchableOpacity>
                         <TouchableOpacity
                             style={styles.containerButton}
-                            onPress={ () => navigate({routeName: BOBY_SCREEN})}
+                            onPress={ () => this.props.navigation.navigate({routeName: BOBY_SCREEN})}
                         >
                             <Image
                                 style={{width: '100%', height: '50%'}}
@@ -61,9 +63,21 @@ class SymptomScreen extends React.PureComponent {
                         </TouchableOpacity>
                     </View>
                     <SideMenu
-                        homeScreen={() => this.props.navigation.navigate(HOME_SCREEN)}
-                        symptomScreen={() => this.props.navigation.navigate(SYMPTOM_SCREEN)}
-                        herbScreen={() => this.props.navigation.navigate(HERB_SCREEN)}
+                        homeScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HOME_SCREEN);
+                        }}
+                        symptomScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(SYMPTOM_SCREEN);
+                        }}
+                        herbScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HERB_SCREEN);
+                        }}
                     />
                 </Container>
             </HandleBack>
@@ -92,4 +106,12 @@ const styles = StyleSheet.create({
     }
 });
 
-export default withNavigation(SymptomScreen);
+export default connect(
+    null,
+    (dispatch) => ({
+        NavigationActions: bindActionCreators(NavigationActions, dispatch),
+        REDUCER_GetHerb: bindActionCreators(AllHerb, dispatch),
+        REDUCER_SetLoading: bindActionCreators(SETLOADING, dispatch),
+        REDUCER_SetLoadinglist: bindActionCreators(SETLOAD, dispatch)
+    })
+)(SymptomScreen);

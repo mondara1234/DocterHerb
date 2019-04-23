@@ -12,6 +12,8 @@ import { HEAD_SCREEN10, HEAD_SCREEN1, SYMPTOM_SCREEN } from "../../router";
 import { HERB_SCREEN } from "../../../Herb/router";
 import { LISTHERB_SCREEN, HOME_SCREEN } from "../../../HomeMain/router";
 import { AllDetailSymptom } from "../../redux/actions";
+import { SETLOAD } from "../../../HomeMain/redux/actions";
+import { SETLOADING } from "../../../Herb/redux/actions";
 
 class headScreen extends React.PureComponent {
     constructor(){
@@ -112,9 +114,21 @@ class headScreen extends React.PureComponent {
                         </View>
                     </View>
                     <SideMenu
-                        homeScreen={() => this.props.navigation.navigate(HOME_SCREEN)}
-                        symptomScreen={() => this.props.navigation.navigate(SYMPTOM_SCREEN)}
-                        herbScreen={() => this.props.navigation.navigate(HERB_SCREEN)}
+                        homeScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HOME_SCREEN);
+                        }}
+                        symptomScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(SYMPTOM_SCREEN);
+                        }}
+                        herbScreen={() => {
+                            this.props.REDUCER_SetLoading();
+                            this.props.REDUCER_SetLoadinglist();
+                            this.props.navigation.navigate(HERB_SCREEN);
+                        }}
                     />
                 </Container>
             </HandleBack>
@@ -171,6 +185,8 @@ export default connect(
     mapStateToProps,
     (dispatch) => ({
         NavigationActions: bindActionCreators(NavigationActions, dispatch),
-        REDUCER_Getdetail: bindActionCreators(AllDetailSymptom, dispatch)
+        REDUCER_Getdetail: bindActionCreators(AllDetailSymptom, dispatch),
+        REDUCER_SetLoading: bindActionCreators(SETLOADING, dispatch),
+        REDUCER_SetLoadinglist: bindActionCreators(SETLOAD, dispatch)
     })
 )(headScreen);
