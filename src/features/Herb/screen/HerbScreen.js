@@ -140,7 +140,7 @@ class herbScreen extends React.PureComponent {
     }
 
     BtnClear(){ // ปุ่ม x (ลบ)
-        let data = this.state.setDataFood;
+        let data = this.state.setDataherb;
         this.setState({
             films: data,
             query: '',
