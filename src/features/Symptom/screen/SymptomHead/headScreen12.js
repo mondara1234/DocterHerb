@@ -114,12 +114,12 @@ class headScreen12 extends React.PureComponent {
                                         :null
                         }
                         {title === 'เจ็บคอ, น้ำมูก, มีเสมหะ, คัดจมูก' || title === 'เจ็บคอ, น้ำมูก, คัดจมูก, มีเสมหะ' || title === 'เจ็บคอ, คัดจมูก, น้ำมูก, มีเสมหะ' || title === 'เจ็บคอ, คัดจมูก, มีเสมหะ, น้ำมูก' || title === 'เจ็บคอ, มีเสมหะ, คัดจมูก, น้ำมูก' || title === 'เจ็บคอ, มีเสมหะ, น้ำมูก, คัดจมูก' ?
-                            <View>
+                            <View style={{flex: 1}}>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
                                     <CommonText text={'คุณเป็น'} size={20} />
                                     <CommonText text={'ภูมิแพ้'} size={18} />
                                 </View>
-                                <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                <View style={{borderWidth: 2, borderColor: '#37818e', flex: 1, margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                         <CommonText text={'เก๊กฮวย, หอมใหญ่, มะกรูด, ฟักเขียว, ชะพลู'} size={18} />
@@ -135,12 +135,12 @@ class headScreen12 extends React.PureComponent {
                                 </View>
                             </View>
                             :title === 'เจ็บคอ, น้ำมูก, มีเสมหะ, จาม' || title === 'เจ็บคอ, น้ำมูก, จาม, มีเสมหะ' || title === 'เจ็บคอ, จาม, น้ำมูก, มีเสมหะ' || title === 'เจ็บคอ, จาม, มีเสมหะ, น้ำมูก' || title === 'เจ็บคอ, มีเสมหะ, จาม, น้ำมูก' || title === 'เจ็บคอ, มีเสมหะ, น้ำมูก, จาม' ?
-                            <View>
+                            <View style={{flex: 1}}>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
                                     <CommonText text={'คุณเป็น'} size={20} />
                                     <CommonText text={'ภูมิแพ้'} size={18} />
                                 </View>
-                                <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                <View style={{borderWidth: 2, borderColor: '#37818e', flex: 1, margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                         <CommonText text={'เก๊กฮวย, หอมใหญ่, กระเทียม, ชะพลู, ดอกคำฝอย'} size={18} />
@@ -156,12 +156,12 @@ class headScreen12 extends React.PureComponent {
                                 </View>
                             </View>
                                 :title === 'เจ็บคอ, มีเสมหะ, คัดจมูก, จาม' || title === 'เจ็บคอ, มีเสมหะ, จาม, คัดจมูก' || title === 'เจ็บคอ, คัดจมูก, จาม, มีเสมหะ' || title === 'เจ็บคอ, คัดจมูก, มีเสมหะ, จาม' || title === 'เจ็บคอ, จาม, คัดจมูก, มีเสมหะ' || title === 'เจ็บคอ, จาม, มีเสมหะ, คัดจมูก' ?
-                                    <View>
+                                    <View style={{flex: 1}}>
                                         <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
                                             <CommonText text={'คุณเป็น'} size={20} />
                                             <CommonText text={'ภูมิแพ้'} size={18} />
                                         </View>
-                                        <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                        <View style={{borderWidth: 2, borderColor: '#37818e', flex: 1, margin: '1%', padding: '1%'}}>
                                             <View style={{flex: 1}}>
                                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                                 <CommonText text={'เก๊กฮวย, กระเทียม, มะกรูด, ฟักเขียว, ชะพลู, ดอกคำฝอย'} size={18} />
@@ -177,12 +177,12 @@ class headScreen12 extends React.PureComponent {
                                         </View>
                                     </View>
                                     :title === 'เจ็บคอ, คัดจมูก, น้ำมูก, จาม' || title === 'เจ็บคอ, คัดจมูก, จาม, น้ำมูก' || title === 'เจ็บคอ, น้ำมูก, คัดจมูก, จาม' || title === 'เจ็บคอ, น้ำมูก, จาม, คัดจมูก' || title === 'เจ็บคอ, จาม, คัดจมูก, น้ำมูก' || title === 'เจ็บคอ, จาม, น้ำมูก, คัดจมูก' ?
-                                        <View>
+                                        <View style={{flex: 1}}>
                                             <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
                                                 <CommonText text={'คุณเป็น'} size={20} />
                                                 <CommonText text={'ภูมิแพ้'} size={18} />
                                             </View>
-                                            <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                            <View style={{borderWidth: 2, borderColor: '#37818e', flex: 1, margin: '1%', padding: '1%'}}>
                                                 <View style={{flex: 1}}>
                                                     <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                                     <CommonText text={'เก๊กฮวย, หอมใหญ่, กระเทียม, ฟักเขียว, ชะพลู'} size={18} />

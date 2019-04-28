@@ -56,7 +56,7 @@ class headScreen13 extends React.PureComponent {
                             <CommonText text={'คุณเป็น'} size={20} />
                             <CommonText text={'ภูมิแพ้'} size={18} />
                         </View>
-                        <View style={{borderWidth: 2, borderColor: '#37818e', height:'72.5%', margin: '1%', padding: '1%'}}>
+                        <View style={{borderWidth: 2, borderColor: '#37818e', flex: 1, margin: '1%', padding: '1%'}}>
                             <View style={{flex: 1}}>
                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                 <CommonText text={'เก๊กฮวย, หอมใหญ่, กระเทียม, มะกรูด, ฟักเขียว, ชะพลู, ดอกคำฝอย'} size={18} />

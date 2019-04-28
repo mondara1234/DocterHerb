@@ -106,12 +106,12 @@ class bodyScreen2 extends React.PureComponent {
                                         :null
                         }
                         {title === 'ปวดท้อง, จุกเสียด, คลื่นไส้' ?
-                            <View>
+                            <View style={{flex:1}}>
                                 <View style={styles.viewDisease}>
                                     <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
                                     <CommonText text={'โรคกรดไหลย้อน'} size={18} />
                                 </View>
-                                <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                <View style={{borderWidth: 2, borderColor: '#37818e', flex:1, margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                         <CommonText text={'ผักชี, ขมิ้นชัน, อบเชย, โหระพา'} size={18} />
@@ -127,12 +127,12 @@ class bodyScreen2 extends React.PureComponent {
                                 </View>
                             </View>
                             : title === 'ปวดท้อง, จุกเสียด, ท้องอืด' ?
-                                <View>
+                                <View style={{flex:1}}>
                                     <View style={styles.viewDisease}>
                                         <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
                                         <CommonText text={'โรคกรดไหลย้อน'} size={18} />
                                     </View>
-                                    <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                    <View style={{borderWidth: 2, borderColor: '#37818e', flex:1, margin: '1%', padding: '1%'}}>
                                         <View style={{flex: 1}}>
                                             <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                             <CommonText text={'ผักชี,ขมิ้นชัน,อบเชย,โหระพา'} size={18} />
@@ -148,12 +148,12 @@ class bodyScreen2 extends React.PureComponent {
                                     </View>
                                 </View>
                                 : title === 'ปวดท้อง, แน่นท้อง, เบื่ออาหาร' ?
-                                    <View>
+                                    <View style={{flex:1}}>
                                         <View style={styles.viewDisease}>
                                             <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
                                             <CommonText text={'โรคท้องผูก'} size={18} />
                                         </View>
-                                        <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                        <View style={{borderWidth: 2, borderColor: '#37818e', flex:1, margin: '1%', padding: '1%'}}>
                                             <View style={{flex: 1}}>
                                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                                 <CommonText text={'ผักชี,ขมิ้นชัน,กระเจี๊ยบเขียว&&ว่านหางจระเข้&&หัวปลี'} size={18} />
@@ -169,12 +169,12 @@ class bodyScreen2 extends React.PureComponent {
                                         </View>
                                     </View>
                                     :
-                                    <View>
+                                    <View style={{flex:1}}>
                                         <View style={styles.viewDisease}>
                                             <CommonText text={'เสี่ยงเป็นโรค'} size={20} />
                                             <CommonText text={'โรคกระเพาะอักเสบ'} size={18} />
                                         </View>
-                                        <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                        <View style={{borderWidth: 2, borderColor: '#37818e', flex:1, margin: '1%', padding: '1%'}}>
                                             <View style={{flex: 1}}>
                                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                                 <CommonText text={'ผผักชี,ขมิ้นชัน,กร01ะเจี๊ยบเขียว,มะขามแขก,ใบมะรุม'} size={18} />

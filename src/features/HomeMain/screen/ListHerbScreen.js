@@ -51,7 +51,7 @@ class ListHerbScreen extends React.PureComponent {
     }
 
     async getListHerb(name) {
-        const response = await fetch(`${SERVER_URL}/MYSQLCHI/home/SeachName.php`, {
+        const response = await fetch(`${SERVER_URL}/home/SeachName.php`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

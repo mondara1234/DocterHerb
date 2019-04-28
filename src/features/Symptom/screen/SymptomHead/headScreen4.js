@@ -57,7 +57,7 @@ class headScreen4 extends React.PureComponent {
                                     <CommonText text={'คุณเป็น'} size={20} />
                                     <CommonText text={'ไข้หวัด'} size={18} />
                                 </View>
-                                <View style={{borderWidth: 2, borderColor: '#37818e', height:'75%', margin: '1%', padding: '1%'}}>
+                                <View style={{borderWidth: 2, borderColor: '#37818e', flex: 1, margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                         <CommonText text={'เก๊กฮวย, ผักชีฝรั่ง, หอมแดง, อบเชย, มะนาว, ตะไคร้'} size={18} />
@@ -73,12 +73,12 @@ class headScreen4 extends React.PureComponent {
                                 </View>
                             </View>
                             :title === 'เจ็บคอ, ไอ, อ่อนเพลีย, ตัวร้อน, หนาวสั่น' ?
-                                <View>
+                                <View style={{flex: 1}}>
                                     <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
                                         <CommonText text={'คุณเป็น'} size={20} />
                                         <CommonText text={'ไข้หวัด'} size={18} />
                                     </View>
-                                    <View style={{borderWidth: 2, borderColor: '#37818e', height:'75%', margin: '1%', padding: '1%'}}>
+                                    <View style={{borderWidth: 2, borderColor: '#37818e', flex: 1, margin: '1%', padding: '1%'}}>
                                         <View style={{flex: 1}}>
                                             <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                             <CommonText text={'เก๊กฮวย, ผักชีฝรั่ง, หอมแดง, อบเชย, ฟ้าทะลายโจร, โหระพา'} size={18} />
@@ -94,12 +94,12 @@ class headScreen4 extends React.PureComponent {
                                     </View>
                                 </View>
                                 :title === 'เจ็บคอ, ไอ, อ่อนเพลีย, ปวดเมื่อย, เจ็บหน้าอก' ?
-                                    <View>
+                                    <View style={{flex: 1}}>
                                         <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%', marginTop: '5%'}}>
                                             <CommonText text={'คุณเป็น'} size={20} />
                                             <CommonText text={'วัณโรค'} size={18} />
                                         </View>
-                                        <View style={{borderWidth: 2, borderColor: '#37818e', height:'73%', margin: '1%', padding: '1%'}}>
+                                        <View style={{borderWidth: 2, borderColor: '#37818e', flex: 1, margin: '1%', padding: '1%'}}>
                                             <View style={{flex: 1}}>
                                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                                 <CommonText text={'เก๊กฮวย, ผักชีฝรั่ง, เหงือกปลาหมอ, ทองพันชั่ง, พญารากดำ, หัวข้าวเย็นใต้'} size={18} />

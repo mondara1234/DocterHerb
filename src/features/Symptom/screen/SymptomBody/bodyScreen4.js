@@ -56,7 +56,7 @@ class bodyScreen4 extends React.PureComponent {
                             <CommonText text={'คุณเป็นโรค'} size={20} />
                             <CommonText text={'โรคกระเพาะอาหารอักเสบ'} size={18} />
                         </View>
-                        <View style={{borderWidth: 2, borderColor: '#37818e', height:'68.5%', margin: '1%', padding: '1%'}}>
+                        <View style={{borderWidth: 2, borderColor: '#37818e', flex:1, margin: '1%', padding: '1%'}}>
                             <View style={{flex: 1}}>
                                 <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                 <CommonText text={'ผักชี, ขมิ้นชัน, กระเจี๊ยบเขียว, มะขามแขก, ใบมะรุม, เม็ดแมงลัก, ขี้เหล็ก'} size={18} />

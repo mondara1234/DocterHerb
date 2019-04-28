@@ -48,16 +48,16 @@ class SymptomScreen extends React.PureComponent {
                             onPress={ () => this.props.navigation.navigate({routeName: HEADSYM_SCREEN})}
                         >
                             <Image
-                                style={{width: '100%', height: '50%'}}
+                                style={{width: '100%', height: '60%'}}
                                 source={require('../../../../pulic/assets/img/head.png')}
                             />
                         </TouchableOpacity>
                         <TouchableOpacity
-                            style={styles.containerButton}
+                            style={[styles.containerButton,{marginBottom: '10%', marginTop: 0}]}
                             onPress={ () => this.props.navigation.navigate({routeName: BOBY_SCREEN})}
                         >
                             <Image
-                                style={{width: '100%', height: '50%'}}
+                                style={{width: '100%', height: '60%'}}
                                 source={require('../../../../pulic/assets/img/body.png')}
                             />
                         </TouchableOpacity>
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     },
     containerButton: {
         width: '40%',
-        marginTop: 30,
+        marginTop: '10%',
         backgroundColor: '#F4F4F4',
         alignItems: 'center',
         justifyContent: 'center'

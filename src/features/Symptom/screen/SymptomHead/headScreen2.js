@@ -93,12 +93,12 @@ class headScreen2 extends React.PureComponent {
                                 :null
                         }
                         {title === 'เจ็บคอ, ไอ, ปวดหัว' ?
-                            <View>
+                            <View style={{flex: 1}}>
                                 <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
                                     <CommonText text={'เสี่ยงเป็น'} size={20} />
                                     <CommonText text={'ไมเกรน'} size={18} />
                                 </View>
-                                <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                <View style={{borderWidth: 2, borderColor: '#37818e', flex: 1, margin: '1%', padding: '1%'}}>
                                     <View style={{flex: 1}}>
                                         <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                         <CommonText text={'ผักชีฝรั่ง, เก๊กฮวย, กระเทียม'} size={18} />
@@ -114,12 +114,12 @@ class headScreen2 extends React.PureComponent {
                                 </View>
                             </View>
                             :title === 'เจ็บคอ, ไอ, อ่อนเพลีย' ?
-                                <View>
+                                <View style={{flex: 1}}>
                                     <View style={{borderWidth: 2, borderColor: '#37818e', height: 100 ,margin: '1%', padding: '1%'}}>
                                         <CommonText text={'เสี่ยงเป็น'} size={20} />
                                         <CommonText text={'ไข้หวัด'} size={18} />
                                     </View>
-                                    <View style={{borderWidth: 2, borderColor: '#37818e', height:'71%', margin: '1%', padding: '1%'}}>
+                                    <View style={{borderWidth: 2, borderColor: '#37818e', flex: 1, margin: '1%', padding: '1%'}}>
                                         <View style={{flex: 1}}>
                                             <CommonText text={'สมุนไพรที่ช่วยรักษาอาการได้'} size={20} />
                                             <CommonText text={'เก๊กฮวย, ผักชีฝรั่ง'} size={18} />

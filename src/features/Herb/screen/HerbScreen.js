@@ -52,7 +52,7 @@ class herbScreen extends React.PureComponent {
     }
 
     async getListHerb() {
-        const response = await fetch(`${SERVER_URL}/MYSQLCHI/herb/Allherb.php`)
+        const response = await fetch(`${SERVER_URL}/herb/Allherb.php`)
             .then(response => response.json())
             .then((responseJson) => responseJson)
             .catch((error) => {
@@ -109,7 +109,7 @@ class herbScreen extends React.PureComponent {
 
     async SearchFoodMenu(value) {
         let valueName = `${value}`;
-        const response = await fetch(`${SERVER_URL}/MYSQLCHI/herb/SeachHerbName.php`, {
+        const response = await fetch(`${SERVER_URL}/herb/SeachHerbName.php`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
